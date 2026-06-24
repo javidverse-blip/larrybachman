@@ -1,64 +1,71 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Music, Star, Quote, ChevronDown } from 'lucide-react';
-import PhotoPlaceholder from '../components/PhotoPlaceholder';
-import VideoPlaceholder from '../components/VideoPlaceholder';
+import { ArrowRight, BookOpen, Mic, Quote, ChevronDown } from 'lucide-react';
 
 const featuredBooks = [
   {
     title: 'Where Are You?',
-    subtitle: 'Your Guide to a Faith Filled Journey',
-    description: '"Where Are You?" is the most significant question in the Bible. If God asked you that question today, what would you say?',
+    subtitle: 'About the Book',
+    description: 'Did you know that "Where Are You?" is the most significant question in the Bible? If God asked you that question, what would you say? You of course would say, "Here Am I". Also, he would be asking about our faith. I have to wonder truly, "Where Are We?" As Christians, where do we stand in our faith? When God asked Adam that question, God was also wondering where Adam was in his faith.',
+    href: 'https://a.co/d/0cWx1ip0',
+    cover: '/whereareyou.png',
   },
   {
     title: 'Where Are You Going?',
     subtitle: "It's About Choice",
-    description: 'A transformative journey exploring the profound impact of choice, faith, and the pursuit of a purposeful life.',
-  },
-  {
-    title: 'Tourniquet',
-    subtitle: "Visions From 'Tarin Row'",
-    description: "G.T.O.'s life of promise meets heartache, redemption, faith, and forgiveness in this gripping story.",
+    description: 'Larry Bachman\'s latest release! Welcome to the unveiling of Larry Bachman\'s highly anticipated latest release, "Where Are You Going? ... It\'s About Choice." Join Larry on his newest journey as he grapples with the challenges of adolescence, confronts peer pressure, and discovers the profound impact of his decisions. In this latest book, Larry\'s story continues to inspire readers of all ages, offering invaluable lessons in resilience, integrity, and the power of faith. Dive into the pages of "Where Are You Going? It\'s About Choice" and embark on an unforgettable adventure filled with heart, courage, and the enduring strength found in choosing the right path.',
+    href: 'https://a.co/d/0bwgMITp',
+    cover: '/whereareyougoing.png',
   },
 ];
 
 const pillars = [
   { icon: BookOpen, label: 'Author', desc: 'Faith-based books and stories that inspire reflection and growth.' },
-  { icon: Music, label: 'Musician', desc: 'Over 20 years performing across the U.S. and Canada.' },
-  { icon: Star, label: 'Publisher', desc: 'Weekly stories capturing the heart of rural community life.' },
+  { icon: Mic, label: 'Speaker', desc: 'Messages of faith, redemption, and purpose that encourage audiences to share the good within them.' },
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.08),transparent_60%)]" />
+      <section className="relative min-h-screen flex items-center bg-[#251908]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.06),transparent_65%)]" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-2xl">
-              <p className="text-gold font-medium tracking-[0.25em] uppercase text-xs mb-6">
-                Author · Musician · Businessman · Servant Leader
-              </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-warm-white leading-[1.08] mb-6">
-                Larry<br />
-                <span className="text-gold">Bachman</span>
+                YOUR STORY<br />
+                <span className="text-gold">ISN'T OVER</span>
               </h1>
-              <p className="text-lg sm:text-xl text-warm-white/55 leading-relaxed mb-8 max-w-xl">
-                A life shaped by faith, music, and the open land. From the farms of Pennsylvania to the ranches of Texas — sharing stories that matter.
+              <p className="text-lg sm:text-xl text-warm-white/55 leading-relaxed mb-6 max-w-xl">
+                Falling down is not the end of your story. Your story isn't over. The fall may be part of your story, but it does not have to define your future.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/about" className="btn-primary">
-                  Discover His Story <ArrowRight size={16} />
-                </Link>
-                <Link to="/books" className="btn-outline">
-                  Explore Books
+
+              <div className="flex flex-col items-start gap-0">
+                <div className="relative" style={{ width: '700px' }}>
+                  <img
+                    src="/books-prev.png"
+                    alt="Books Stack"
+                    className="w-full"
+                  />
+                </div>
+
+                <Link 
+                to="/about-larry" 
+                className="btn-primary absolute left-10 top-[350px]"
+                >
+                  Meet Larry <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex justify-center">
-              <PhotoPlaceholder label="Larry Bachman Portrait" aspect="aspect-[3/4]" className="w-full max-w-md" />
-            </div>
+            
+<div className="flex justify-center translate-y-[55px]">
+  <img
+    src="/larry-b.png"
+    alt="Larry Bachman Portrait"
+    className="w-full max-w-md aspect-[3/4] object-cover rounded-2xl"
+  />
+</div>
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
@@ -68,40 +75,56 @@ export default function Home() {
       </section>
 
       {/* About preview */}
-      <section className="section-padding bg-gradient-to-b from-navy to-navy-light">
+     <section className="section-padding bg-[#d2a330]">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div className="order-2 lg:order-1">
-              <PhotoPlaceholder label="Larry Bachman" aspect="aspect-[4/3]" className="w-full" />
+          <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.4fr_0.8fr] gap-8 xl:gap-12 items-center">
+            <div className="flex justify-center h-full">
+              <div className="relative w-full max-w-[280px] aspect-square rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
+                <img
+                  src="/larry-office.png"
+                  alt="Larry Bachman in his office"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">About Larry</p>
-              <h2 className="text-4xl font-serif font-bold text-warm-white mb-6 leading-tight">
-                A Legacy Built on<br />Faith &amp; Story
+            <div className="text-center max-w-2xl mx-auto px-2 sm:px-4 lg:px-0">
+              <p className="text-[#251908] font-medium tracking-[0.2em] uppercase text-xs mb-3">Larry B. Bachman</p>
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#251908] mb-6 leading-tight">
+                A life shaped by hard lessons, second chances, and the conviction that no life is beyond redemption
               </h2>
-              <p className="text-warm-white/50 leading-relaxed mb-4">
-                Born in 1950 and raised on a humble farm in the heart of Pennsylvania, Larry Bachman's journey has been one of faith, music, storytelling, and a deep desire to leave a meaningful legacy.
+              <p className="text-[#251908]/90 leading-relaxed mb-4 max-w-xl mx-auto">
+                The message woven throughout his books, speaking, and ministry is simple:
               </p>
-              <p className="text-warm-white/50 leading-relaxed mb-4">
-                His union card in 1964 marked the start of a 20-year professional music career spanning the U.S. and Canada. A turning point in 1984 led him to publishing, where he discovered the power of storytelling.
+              <blockquote className="font-serif text-xl text-[#251908]/90 leading-relaxed mb-4 italic max-w-xl mx-auto">
+                "You still have much to contribute to the world. There's a fountain of good in you. Share it with the world, even if they don't want to hear it. Plant the seeds of truth and let them grow."
+              </blockquote>
+              <p className="text-[#251908] font-semibold mb-6">Larry B. Bachman</p>
+              <p className="text-[#251908]/90 leading-relaxed mb-8 max-w-xl mx-auto">
+                That belief has guided Larry through successes, failures, personal struggles, and victories, becoming the foundation of the message he now shares with others.
               </p>
-              <p className="text-warm-white/50 leading-relaxed mb-8">
-                Today, Larry resides in Texas, writing books and sharing stories that uplift. All proceeds from his books go to ministry and service.
-              </p>
-              <Link to="/about" className="inline-flex items-center gap-2 text-gold font-medium hover:text-gold-light transition-colors group">
+              <a href="https://larry-bachman-websit-au4t.bolt.host/about" className="inline-flex items-center justify-center gap-2 text-[#251908] font-medium hover:text-[#1d1507] transition-colors group">
                 Read His Full Story <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
+            </div>
+            <div className="flex justify-center h-full">
+              <div className="relative w-full max-w-[280px] aspect-square rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
+                <img
+                  src="/road.png"
+                  alt="Larry Bachman on the road"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
             {pillars.map(({ icon: Icon, label, desc }) => (
               <div key={label} className="text-center p-6 rounded-lg bg-navy-card/40 border border-gold/10">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 mb-4">
                   <Icon size={20} className="text-gold" />
                 </div>
                 <h3 className="font-serif font-semibold text-lg text-warm-white mb-2">{label}</h3>
-                <p className="text-warm-white/40 text-sm leading-relaxed">{desc}</p>
+                <p className="text-warm-white text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -120,19 +143,23 @@ export default function Home() {
               View All Books <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {featuredBooks.map((book) => (
               <div key={book.title} className="group bg-navy-card/40 border border-gold/10 hover:border-gold/30 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1">
                 <div className="aspect-[3/4] overflow-hidden bg-navy-card/60">
-                  <PhotoPlaceholder label={`${book.title} Book Cover`} aspect="aspect-[3/4]" className="w-full h-full rounded-none border-0" />
+                  <img
+                    src={book.cover}
+                    alt={`${book.title} book cover`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif font-bold text-warm-white text-lg mb-1">{book.title}</h3>
                   <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
                   <p className="text-warm-white/40 text-sm leading-relaxed mb-4">{book.description}</p>
-                  <Link to="/books" className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-sm font-medium transition-colors group/link">
-                    Learn More <ArrowRight size={13} className="transition-transform group-hover/link:translate-x-1" />
-                  </Link>
+                  <a href={book.href} className="inline-flex items-center gap-2 rounded-full bg-warm-white px-5 py-2.5 text-sm font-medium text-[#d2a330] transition-all duration-300 hover:bg-gold-light hover:text-[#251908]" target="_blank" rel="noreferrer">
+                    View on Amazon <ArrowRight size={13} />
+                  </a>
                 </div>
               </div>
             ))}
@@ -140,87 +167,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Music Highlights */}
-      <section className="section-padding bg-gradient-to-b from-navy-light to-navy">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Music</p>
-              <h2 className="text-4xl font-serif font-bold text-warm-white mb-6 leading-tight">
-                Songs of Faith<br />&amp; Promise
-              </h2>
-              <p className="text-warm-white/50 leading-relaxed mb-4">
-                Larry's gospel songs "The Gift" and "The Promise" stand as testaments to how deeply faith and music became intertwined in his life. "The Promise" was featured in the movie <em>Sparrows Nesting</em>, premiered at Hollywood's iconic Grauman's Theatre.
-              </p>
-              <p className="text-warm-white/50 leading-relaxed mb-8">
-                Let the soul-stirring lyrics and uplifting rhythm guide you to a place of spiritual reflection and connection.
-              </p>
-              <Link to="/media" className="btn-outline">
-                Explore Music <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div>
-              <VideoPlaceholder label="The Promise - Music Video" className="w-full" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Television Feature */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-[#d2a330]">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div className="order-2 lg:order-1">
-              <VideoPlaceholder label="TV Appearance" className="w-full" />
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center [grid-template-areas:'video'_'tvText'_'quote'_'tcImage'] lg:[grid-template-areas:'video_tvText'_'quote_tcImage']"
+          >
+            <div className="[grid-area:video]">
+              <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
+                <iframe
+                  src="https://player.vimeo.com/video/1106840720?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="absolute inset-0 w-full h-full"
+                  title="God Made Millionaire TV with TC Bradley | Featuring Larry Bachman"
+                />
+              </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">In the Spotlight</p>
-              <h2 className="text-4xl font-serif font-bold text-warm-white mb-6 leading-tight">
+            <div className="text-right [grid-area:tvText]">
+              <p className="text-[#251908] font-medium tracking-[0.2em] uppercase text-xs mb-3">TV Appearance</p>
+              <p className="text-[#251908]/70 font-medium tracking-[0.2em] uppercase text-xs mb-3">In the Spotlight</p>
+              <h2 className="text-4xl font-serif font-bold text-[#251908] mb-6 leading-tight">
                 Nationally Syndicated<br />Television
               </h2>
-              <p className="text-warm-white/50 leading-relaxed mb-8">
+              <p className="text-[#251908]/90 leading-relaxed">
                 Larry Bachman has stepped into the national spotlight with a legacy message that continues to inspire and challenge audiences across the country.
               </p>
-              <Link to="/contact" className="btn-primary">
-                Book Larry for Speaking <ArrowRight size={16} />
-              </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-gradient-to-b from-navy to-navy-light">
-        <div className="container-narrow text-center">
-          <Quote size={40} className="text-gold/40 mx-auto mb-8" />
-          <blockquote className="font-serif text-xl sm:text-2xl text-warm-white leading-relaxed mb-8 italic">
-            "Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration."
-          </blockquote>
-          <div className="flex flex-col items-center gap-1">
-            <p className="text-gold font-semibold">TC Bradley</p>
-            <p className="text-warm-white/40 text-sm">Nationally Syndicated Host</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Banner */}
-      <section className="relative py-24 bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,168,67,0.06),transparent_70%)]" />
-        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-          <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-4">Ranch Life · Faith · Music · Story</p>
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-warm-white mb-6 leading-tight">
-            Explore Every Chapter<br />of Larry's Journey
-          </h2>
-          <p className="text-warm-white/40 leading-relaxed mb-8">
-            From ranch sunsets in Texas to the stages of New York — every part of Larry's life holds a lesson worth discovering.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/about" className="btn-primary">
-              Meet Larry <ArrowRight size={16} />
-            </Link>
-            <Link to="/contact" className="btn-outline">
-              Get in Touch
-            </Link>
+            <div className="text-right lg:text-left [grid-area:quote]">
+              <Quote size={40} className="text-[#251908]/40 ml-auto lg:ml-0 mb-8" />
+              <blockquote className="font-serif text-xl sm:text-2xl text-[#251908] leading-relaxed mb-6 italic">
+                "Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration."
+              </blockquote>
+              <p className="text-[#251908] font-semibold">TC Bradley</p>
+              <p className="text-[#251908]/70 text-sm">Nationally Syndicated Host</p>
+            </div>
+            <div className="[grid-area:tcImage]">
+              <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
+                <img
+                  src="/tc-bradley-larry.png"
+                  alt="TC Bradley with Larry Bachman"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

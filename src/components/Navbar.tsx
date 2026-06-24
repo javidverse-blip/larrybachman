@@ -39,12 +39,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-              <span className="font-serif text-gold text-lg font-bold">LB</span>
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center overflow-hidden group-hover:bg-gold/20 transition-colors">
+              <img
+                src="/logo.png"
+                alt="Larry B. Bachman logo"
+                className="w-9 h-9 object-contain"
+              />
             </div>
             <div className="hidden sm:block">
-              <span className="text-gold font-serif font-semibold text-lg leading-tight block">Larry Bachman</span>
-              <span className="text-warm-white/40 text-xs tracking-[0.2em] uppercase">Author · Musician · Speaker</span>
+              <span className="text-gold font-serif font-semibold text-lg leading-tight block">Larry B. Bachman</span>
+              <span className="text-warm-white/40 text-xs tracking-[0.2em] uppercase">Author | Speaker</span>
             </div>
           </Link>
 
