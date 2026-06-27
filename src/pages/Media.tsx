@@ -57,12 +57,12 @@ export default function Media() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-navy via-navy-light to-navy">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-gradient-to-br from-navy via-navy-light to-navy border-b border-gold/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.08),transparent_60%)]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Videos · Music · Press · Events</p>
-          <h1 className="text-5xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Media</h1>
-          <p className="text-warm-white/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Media</h1>
+          <p className="text-warm-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Videos, interviews, music, press features, and appearances from Larry Bachman's journey.
           </p>
         </div>
@@ -91,17 +91,17 @@ export default function Media() {
       </div>
 
       {/* Content */}
-      <div className="section-padding bg-navy">
+      <div className="section-padding bg-gold">
         <div className="container-wide">
           {/* Videos */}
           {activeTab === 'videos' && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {videos.map((v) => (
-                <div key={v.title} className="group">
+                <div key={v.title} className="group bg-navy-card p-4 rounded-lg border border-navy/20">
                   <VideoPlaceholder label={v.title} className="w-full" />
                   <div className="mt-4">
                     <h3 className="font-serif font-bold text-warm-white text-lg mb-1">{v.title}</h3>
-                    <p className="text-warm-white/40 text-sm">{v.desc}</p>
+                    <p className="text-warm-white/60 text-sm">{v.desc}</p>
                   </div>
                 </div>
               ))}
@@ -112,14 +112,14 @@ export default function Media() {
           {activeTab === 'interviews' && (
             <div className="space-y-8">
               {interviews.map((i) => (
-                <div key={i.title} className="flex flex-col sm:flex-row gap-6 p-6 bg-navy-card/40 border border-gold/10 rounded-lg">
+                <div key={i.title} className="flex flex-col sm:flex-row gap-5 sm:gap-6 p-5 sm:p-6 bg-navy-card/60 border border-gold/20 rounded-lg">
                   <div className="sm:w-48 shrink-0">
                     <PhotoPlaceholder label={i.title} aspect="aspect-video" className="w-full" />
                   </div>
                   <div className="flex-1">
                     <span className="text-gold text-xs font-medium uppercase tracking-wide">{i.date}</span>
                     <h3 className="font-serif font-bold text-warm-white text-lg mt-1 mb-2">{i.title}</h3>
-                    <p className="text-warm-white/40 text-sm mb-4">{i.desc}</p>
+                    <p className="text-warm-white/60 text-sm mb-4">{i.desc}</p>
                     <a href="#" className="inline-flex items-center gap-2 text-gold hover:text-gold-light text-sm font-medium transition-colors">
                       Watch Interview <ExternalLink size={14} />
                     </a>
@@ -133,11 +133,11 @@ export default function Media() {
           {activeTab === 'music' && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {music.map((m) => (
-                <div key={m.title} className="group">
+                <div key={m.title} className="group bg-navy-card p-4 rounded-lg border border-navy/20">
                   <VideoPlaceholder label={m.title} className="w-full" />
                   <div className="mt-4">
                     <h3 className="font-serif font-bold text-warm-white text-lg mb-1">{m.title}</h3>
-                    <p className="text-warm-white/40 text-sm">{m.desc}</p>
+                    <p className="text-warm-white/60 text-sm">{m.desc}</p>
                   </div>
                 </div>
               ))}
@@ -148,10 +148,10 @@ export default function Media() {
           {activeTab === 'press' && (
             <div className="space-y-8">
               {press.map((p) => (
-                <div key={p.title} className="p-6 bg-navy-card/40 border border-gold/10 rounded-lg">
+                <div key={p.title} className="p-5 sm:p-6 bg-navy-card/60 border border-gold/20 rounded-lg">
                   <span className="text-gold text-xs font-medium uppercase tracking-wide">{p.date}</span>
                   <h3 className="font-serif font-bold text-warm-white text-lg mt-1 mb-2">{p.title}</h3>
-                  <p className="text-warm-white/40 text-sm mb-4">{p.desc}</p>
+                  <p className="text-warm-white/60 text-sm mb-4">{p.desc}</p>
                   <a href="#" className="inline-flex items-center gap-2 text-gold hover:text-gold-light text-sm font-medium transition-colors">
                     Read Article <ExternalLink size={14} />
                   </a>
@@ -164,14 +164,14 @@ export default function Media() {
           {activeTab === 'events' && (
             <div className="space-y-8">
               {events.map((e) => (
-                <div key={e.title} className="flex flex-col sm:flex-row gap-6 p-6 bg-navy-card/40 border border-gold/10 rounded-lg">
+                <div key={e.title} className="flex flex-col sm:flex-row gap-5 sm:gap-6 p-5 sm:p-6 bg-navy-card/60 border border-gold/20 rounded-lg">
                   <div className="sm:w-48 shrink-0">
                     <PhotoPlaceholder label={e.title} aspect="aspect-video" className="w-full" />
                   </div>
                   <div className="flex-1">
                     <span className="text-gold text-xs font-medium uppercase tracking-wide">{e.date}</span>
                     <h3 className="font-serif font-bold text-warm-white text-lg mt-1 mb-2">{e.title}</h3>
-                    <p className="text-warm-white/40 text-sm mb-4">{e.desc}</p>
+                    <p className="text-warm-white/60 text-sm mb-4">{e.desc}</p>
                     <a href="#" className="inline-flex items-center gap-2 text-gold hover:text-gold-light text-sm font-medium transition-colors">
                       Learn More <ExternalLink size={14} />
                     </a>
@@ -185,10 +185,10 @@ export default function Media() {
           {activeTab === 'gallery' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {galleryImages.map((img) => (
-                <div key={img.label} className="group">
+                <div key={img.label} className="group bg-navy-card p-4 rounded-lg border border-navy/20">
                   <PhotoPlaceholder label={img.label} aspect="aspect-[4/3]" className="w-full" />
                   <div className="mt-3 flex items-center justify-between">
-                    <span className="text-warm-white/40 text-sm">{img.label}</span>
+                    <span className="text-warm-white/60 text-sm">{img.label}</span>
                     <span className="text-gold/60 text-xs uppercase tracking-wide">{img.category}</span>
                   </div>
                 </div>

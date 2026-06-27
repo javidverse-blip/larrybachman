@@ -129,21 +129,21 @@ export default function LifeAndStories() {
     <div className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative pt-32 pb-16 bg-cover bg-center"
+        className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-cover bg-center border-b border-gold/10"
         style={{ backgroundImage: 'url(https://images.pexels.com/photos/2356045/pexels-photo-2356045.jpeg?auto=compress&cs=tinysrgb&w=1600)' }}
       >
-        <div className="absolute inset-0 bg-charcoal-900/80" />
+        <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold-400 font-medium tracking-widest uppercase text-xs mb-3">Stories · Land · Life</p>
-          <h1 className="text-5xl sm:text-6xl font-serif font-bold text-white mb-6">Life &amp; Stories</h1>
-          <p className="text-charcoal-300 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gold font-medium tracking-widest uppercase text-xs mb-3">Stories · Land · Life</p>
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Life &amp; Stories</h1>
+          <p className="text-warm-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Articles, ranch reflections, and photographs from Larry's life on the land and beyond.
           </p>
         </div>
       </section>
 
       {/* Sticky Tab Bar */}
-      <div className="bg-white border-b border-cream-300 sticky top-16 md:top-20 z-30">
+      <div className="bg-navy-card/90 border-b border-gold/20 sticky top-16 md:top-20 z-30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-0">
             {tabs.map(({ id, label }) => (
@@ -152,8 +152,8 @@ export default function LifeAndStories() {
                 onClick={() => setActiveTab(id)}
                 className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                   activeTab === id
-                    ? 'border-gold-500 text-gold-600'
-                    : 'border-transparent text-charcoal-500 hover:text-charcoal-800 hover:border-charcoal-300'
+                    ? 'border-gold text-gold'
+                    : 'border-transparent text-warm-white/50 hover:text-gold hover:border-gold/30'
                 }`}
               >
                 {label}
@@ -165,25 +165,26 @@ export default function LifeAndStories() {
 
       {/* ── ARTICLES TAB ── */}
       {activeTab === 'articles' && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="bg-gold">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           {/* Featured */}
-          <p className="text-gold-600 font-medium tracking-widest uppercase text-xs mb-2">Featured</p>
-          <h2 className="text-3xl font-serif font-bold text-charcoal-800 mb-8">Latest Stories</h2>
+          <p className="text-navy/70 font-medium tracking-widest uppercase text-xs mb-2">Featured</p>
+          <h2 className="text-3xl font-serif font-bold text-navy mb-8">Latest Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
             {articles.filter((a) => a.featured).map((a) => (
-              <div key={a.id} className="group bg-white border border-cream-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 flex flex-col">
+              <div key={a.id} className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 transition-all duration-300 hover:-translate-y-0.5 flex flex-col rounded-lg overflow-hidden">
                 <div className="overflow-hidden">
                   <img src={a.image} alt={a.title} className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium text-gold-600 bg-gold-50 border border-gold-200 px-2 py-0.5 rounded-sm">{a.category}</span>
-                    <span className="text-xs text-charcoal-400">{a.date}</span>
+                    <span className="text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-sm">{a.category}</span>
+                    <span className="text-xs text-warm-white/40">{a.date}</span>
                   </div>
-                  <h3 className="font-serif font-bold text-charcoal-800 text-xl mb-3 leading-snug">{a.title}</h3>
-                  <p className="text-charcoal-500 text-sm leading-relaxed flex-1">{a.excerpt}</p>
-                  <div className="mt-5 pt-4 border-t border-cream-200">
-                    <span className="inline-flex items-center gap-1 text-gold-600 hover:text-gold-700 text-sm font-medium cursor-pointer group/link">
+                  <h3 className="font-serif font-bold text-warm-white text-xl mb-3 leading-snug">{a.title}</h3>
+                  <p className="text-warm-white/60 text-sm leading-relaxed flex-1">{a.excerpt}</p>
+                  <div className="mt-5 pt-4 border-t border-gold/10">
+                    <span className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-sm font-medium cursor-pointer group/link">
                       Read More <ArrowRight size={13} className="transition-transform group-hover/link:translate-x-1" />
                     </span>
                   </div>
@@ -192,23 +193,23 @@ export default function LifeAndStories() {
             ))}
           </div>
 
-          <div className="border-t border-cream-300 pt-12">
-            <h2 className="text-2xl font-serif font-bold text-charcoal-800 mb-8">More Articles</h2>
+          <div className="border-t border-gold/20 pt-12">
+            <h2 className="text-2xl font-serif font-bold text-navy mb-8">More Articles</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {articles.filter((a) => !a.featured).map((a) => (
-                <div key={a.id} className="group bg-white border border-cream-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 flex flex-col">
+                <div key={a.id} className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 transition-all duration-300 hover:-translate-y-0.5 flex flex-col rounded-lg overflow-hidden">
                   <div className="overflow-hidden">
                     <img src={a.image} alt={a.title} className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-medium text-gold-600 bg-gold-50 border border-gold-200 px-2 py-0.5 rounded-sm">{a.category}</span>
-                      <span className="text-xs text-charcoal-400">{a.date}</span>
+                      <span className="text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-sm">{a.category}</span>
+                      <span className="text-xs text-warm-white/40">{a.date}</span>
                     </div>
-                    <h3 className="font-serif font-bold text-charcoal-800 text-base mb-2 leading-snug">{a.title}</h3>
-                    <p className="text-charcoal-500 text-sm leading-relaxed flex-1 line-clamp-3">{a.excerpt}</p>
-                    <div className="mt-4 pt-3 border-t border-cream-200">
-                      <span className="inline-flex items-center gap-1 text-gold-600 hover:text-gold-700 text-sm font-medium cursor-pointer group/link">
+                    <h3 className="font-serif font-bold text-warm-white text-base mb-2 leading-snug">{a.title}</h3>
+                    <p className="text-warm-white/60 text-sm leading-relaxed flex-1 line-clamp-3">{a.excerpt}</p>
+                    <div className="mt-4 pt-3 border-t border-gold/10">
+                      <span className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-sm font-medium cursor-pointer group/link">
                         Read More <ArrowRight size={12} className="transition-transform group-hover/link:translate-x-1" />
                       </span>
                     </div>
@@ -218,54 +219,55 @@ export default function LifeAndStories() {
             </div>
           </div>
         </div>
+        </div>
       )}
 
       {/* ── RANCH LIFE TAB ── */}
       {activeTab === 'ranch' && (
         <div>
-          <div className="bg-cream-100 py-14">
+          <div className="bg-navy py-14 sm:py-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <p className="text-gold-600 font-medium tracking-widest uppercase text-xs mb-3">Life on the Land</p>
-              <h2 className="text-3xl font-serif font-bold text-charcoal-800 mb-6">The Texas Ranch</h2>
-              <p className="text-charcoal-600 leading-relaxed mb-4">
+              <p className="text-gold font-medium tracking-widest uppercase text-xs mb-3">Life on the Land</p>
+              <h2 className="text-3xl font-serif font-bold text-warm-white mb-6">The Texas Ranch</h2>
+              <p className="text-warm-white/60 leading-relaxed mb-4">
                 After decades of music tours, city stages, and the bustle of the publishing world, Larry Bachman found his deepest peace on a ranch in Texas. It's where he writes, reflects, and reconnects with the values that have always guided him.
               </p>
-              <p className="text-charcoal-600 leading-relaxed">
+              <p className="text-warm-white/60 leading-relaxed">
                 The land demands honesty. Animals require presence. Every sunrise is a reminder that life is both fragile and generous, and that gratitude is the most honest response to all of it.
               </p>
             </div>
           </div>
 
-          <div className="bg-charcoal-900 py-14">
+          <div className="bg-gold py-14 sm:py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {ranchValues.map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold-900/40 border border-gold-700 mb-4">
-                      <Icon size={20} className="text-gold-400" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy/10 border border-navy/20 mb-4">
+                      <Icon size={20} className="text-navy" />
                     </div>
-                    <h3 className="font-serif font-bold text-white text-xl mb-3">{title}</h3>
-                    <p className="text-charcoal-400 text-sm leading-relaxed">{desc}</p>
+                    <h3 className="font-serif font-bold text-navy text-xl mb-3">{title}</h3>
+                    <p className="text-navy/75 text-sm leading-relaxed">{desc}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <p className="text-gold-600 font-medium tracking-widest uppercase text-xs mb-2">Stories from the Ranch</p>
-            <h2 className="text-3xl font-serif font-bold text-charcoal-800 mb-12">Life on the Land</h2>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 bg-navy">
+            <p className="text-gold font-medium tracking-widest uppercase text-xs mb-2">Stories from the Ranch</p>
+            <h2 className="text-3xl font-serif font-bold text-warm-white mb-12">Life on the Land</h2>
             <div className="space-y-16">
               {ranchStories.map((story, i) => (
                 <div key={story.title} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   <div className={`relative ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <img src={story.image} alt={story.title} className="w-full h-72 object-cover shadow-lg" />
-                    <div className="absolute -bottom-3 -right-3 w-20 h-20 border-2 border-gold-400 hidden md:block" />
+                    <div className="absolute -bottom-3 -right-3 w-20 h-20 border-2 border-gold hidden md:block" />
                   </div>
                   <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-                    <p className="text-gold-600 text-xs font-medium uppercase tracking-wide mb-2">{story.date}</p>
-                    <h3 className="font-serif font-bold text-charcoal-800 text-2xl mb-4">{story.title}</h3>
-                    <p className="text-charcoal-500 leading-relaxed italic text-lg">"{story.excerpt}"</p>
+                    <p className="text-gold text-xs font-medium uppercase tracking-wide mb-2">{story.date}</p>
+                    <h3 className="font-serif font-bold text-warm-white text-2xl mb-4">{story.title}</h3>
+                    <p className="text-warm-white/60 leading-relaxed italic text-lg">"{story.excerpt}"</p>
                   </div>
                 </div>
               ))}
@@ -277,12 +279,12 @@ export default function LifeAndStories() {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: 'url(https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1600)' }}
             />
-            <div className="absolute inset-0 bg-charcoal-900/65" />
+            <div className="absolute inset-0 bg-navy/75" />
             <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-              <p className="font-serif text-2xl sm:text-3xl text-white italic leading-relaxed mb-6">
+              <p className="font-serif text-2xl sm:text-3xl text-warm-white italic leading-relaxed mb-6">
                 "The ranch has taught me that a man who tends the land and cares for animals is not far from understanding what God asks of all of us."
               </p>
-              <p className="text-gold-400 font-medium">— Larry Bachman</p>
+              <p className="text-gold font-medium">— Larry Bachman</p>
             </div>
           </div>
         </div>
@@ -290,12 +292,13 @@ export default function LifeAndStories() {
 
       {/* ── GALLERY TAB ── */}
       {activeTab === 'gallery' && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-gold">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
             {galleryImages.map((img, idx) => (
               <div
                 key={img.src + idx}
-                className="break-inside-avoid group cursor-pointer relative overflow-hidden bg-cream-100"
+                className="break-inside-avoid group cursor-pointer relative overflow-hidden bg-navy-card border border-gold/10 rounded-lg"
                 onClick={() => setLightbox(idx)}
               >
                 <img
@@ -303,39 +306,40 @@ export default function LifeAndStories() {
                   alt={img.caption}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-charcoal-900/0 group-hover:bg-charcoal-900/50 transition-all duration-300 flex items-end p-4">
+                <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/60 transition-all duration-300 flex items-end p-4">
                   <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <span className="text-xs font-medium text-gold-400 uppercase tracking-wide block mb-0.5">{img.category}</span>
-                    <p className="text-white font-serif font-semibold text-sm">{img.caption}</p>
+                    <span className="text-xs font-medium text-gold uppercase tracking-wide block mb-0.5">{img.category}</span>
+                    <p className="text-warm-white font-serif font-semibold text-sm">{img.caption}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        </div>
       )}
 
       {/* Lightbox */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 bg-charcoal-900/96 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-navy/95 flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
         >
-          <button className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-10 p-2" onClick={() => setLightbox(null)} aria-label="Close">
+          <button className="absolute top-4 right-4 text-warm-white/70 hover:text-gold transition-colors z-10 p-2" onClick={() => setLightbox(null)} aria-label="Close">
             <X size={28} />
           </button>
-          <button className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 p-2" onClick={prev} aria-label="Previous">
+          <button className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-warm-white/70 hover:text-gold transition-colors z-10 p-2" onClick={prev} aria-label="Previous">
             <ChevronLeft size={36} />
           </button>
-          <button className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 p-2" onClick={next} aria-label="Next">
+          <button className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-warm-white/70 hover:text-gold transition-colors z-10 p-2" onClick={next} aria-label="Next">
             <ChevronRight size={36} />
           </button>
           <div className="max-w-4xl w-full mx-auto" onClick={(e) => e.stopPropagation()}>
             <img src={galleryImages[lightbox].src} alt={galleryImages[lightbox].caption} className="w-full max-h-[80vh] object-contain" />
             <div className="text-center mt-4">
-              <span className="text-gold-400 text-xs uppercase tracking-widest font-medium block mb-1">{galleryImages[lightbox].category}</span>
-              <p className="text-white font-serif text-lg">{galleryImages[lightbox].caption}</p>
-              <p className="text-charcoal-500 text-xs mt-2">{lightbox + 1} / {galleryImages.length}</p>
+              <span className="text-gold text-xs uppercase tracking-widest font-medium block mb-1">{galleryImages[lightbox].category}</span>
+              <p className="text-warm-white font-serif text-lg">{galleryImages[lightbox].caption}</p>
+              <p className="text-warm-white/40 text-xs mt-2">{lightbox + 1} / {galleryImages.length}</p>
             </div>
           </div>
         </div>

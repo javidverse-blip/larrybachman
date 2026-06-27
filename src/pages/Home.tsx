@@ -27,12 +27,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center bg-[#251908]">
+      <section className="relative min-h-screen overflow-hidden bg-[#251908]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.06),transparent_65%)]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl">
+        <div className="relative z-10 max-w-7xl min-h-screen mx-auto px-4 sm:px-6 lg:px-8 pt-20 w-full flex">
+          <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center lg:items-stretch">
+            <div className="relative z-10 max-w-2xl py-10 sm:py-14 lg:py-20 flex flex-col justify-center">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-warm-white leading-[1.08] mb-6">
                 YOUR STORY<br />
                 <span className="text-gold">ISN'T OVER</span>
@@ -41,34 +41,34 @@ export default function Home() {
                 Falling down is not the end of your story. Your story isn't over. The fall may be part of your story, but it does not have to define your future.
               </p>
 
-              <div className="flex flex-col items-start gap-0">
-                <div className="relative" style={{ width: '700px' }}>
-                  <img
-                    src="/books-prev.png"
-                    alt="Books Stack"
-                    className="w-full"
-                  />
-                </div>
-
-                <Link 
-                to="/about-larry" 
-                className="btn-primary absolute left-10 top-[350px]"
+              <div className="flex flex-col items-start">
+                <Link
+                  to="/about"
+                  className="btn-primary mb-2"
                 >
                   Meet Larry <ArrowRight size={16} />
                 </Link>
+
+                <div className="relative w-full max-w-[700px] -mx-2 sm:-mx-4">
+                  <img
+                    src="/books-prev.png"
+                    alt="Books Stack"
+                    className="block w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
-            
-<div className="flex justify-center translate-y-[55px]">
-  <img
-    src="/larry-b.png"
-    alt="Larry Bachman Portrait"
-    className="w-full max-w-md aspect-[3/4] object-cover rounded-2xl"
-  />
-</div>
+
+            <div className="relative flex min-h-[360px] sm:min-h-[480px] lg:min-h-0 items-end justify-center lg:justify-end">
+              <img
+                src="/larry-b.png"
+                alt="Larry Bachman Portrait"
+                className="block w-full max-w-[420px] sm:max-w-[500px] lg:absolute lg:bottom-0 lg:right-0 lg:max-w-[560px] h-auto"
+              />
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 animate-bounce">
           <div className="w-px h-8 bg-warm-white/20" />
           <ChevronDown size={16} className="text-gold/50" />
         </div>
@@ -102,9 +102,9 @@ export default function Home() {
               <p className="text-[#251908]/90 leading-relaxed mb-8 max-w-xl mx-auto">
                 That belief has guided Larry through successes, failures, personal struggles, and victories, becoming the foundation of the message he now shares with others.
               </p>
-              <a href="https://larry-bachman-websit-au4t.bolt.host/about" className="inline-flex items-center justify-center gap-2 text-[#251908] font-medium hover:text-[#1d1507] transition-colors group">
+              <Link to="/about" className="inline-flex items-center justify-center gap-2 text-[#251908] font-medium hover:text-[#1d1507] transition-colors group">
                 Read His Full Story <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
             </div>
             <div className="flex justify-center h-full">
               <div className="relative w-full max-w-[280px] aspect-square rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">

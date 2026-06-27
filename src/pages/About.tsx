@@ -67,12 +67,12 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-navy via-navy-light to-navy">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-gradient-to-br from-navy via-navy-light to-navy border-b border-gold/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.08),transparent_60%)]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">The Man Behind the Story</p>
-          <h1 className="text-5xl sm:text-6xl font-serif font-bold text-warm-white mb-6">About Larry</h1>
-          <p className="text-warm-white/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-warm-white mb-6">About Larry</h1>
+          <p className="text-warm-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             A Pennsylvania farm boy who became a professional musician, publisher, author, and rancher — shaped at every turn by faith.
           </p>
         </div>
@@ -96,36 +96,38 @@ export default function About() {
       </nav>
 
       {/* Content Sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div>
         {sections.map((section, i) => (
           <section
             key={section.id}
             id={section.id}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24 scroll-mt-32"
+            className={`${i % 2 === 1 ? 'bg-gold' : 'bg-navy'} scroll-mt-32 px-4 py-16 sm:px-6 sm:py-20 lg:px-8`}
           >
-            <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
-              <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">{section.label}</p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-warm-white mb-6 leading-tight">
-                {section.heading}
-              </h2>
-              {section.content.map((para, idx) => (
-                <p key={idx} className="text-warm-white/40 leading-relaxed mb-4">{para}</p>
-              ))}
-              {section.id === 'biography' && (
-                <Link to="/books" className="inline-flex items-center gap-2 text-gold font-medium hover:text-gold-light transition-colors group mt-2">
-                  Explore His Books <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-                </Link>
-              )}
-            </div>
-            <div className={`relative ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-              <PhotoPlaceholder label={`${section.label} Photo`} aspect="aspect-[4/3]" className="w-full" />
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
+                <p className={`${i % 2 === 1 ? 'text-navy/70' : 'text-gold'} font-medium tracking-[0.2em] uppercase text-xs mb-3`}>{section.label}</p>
+                <h2 className={`${i % 2 === 1 ? 'text-navy' : 'text-warm-white'} text-3xl sm:text-4xl font-serif font-bold mb-6 leading-tight`}>
+                  {section.heading}
+                </h2>
+                {section.content.map((para, idx) => (
+                  <p key={idx} className={`${i % 2 === 1 ? 'text-navy/80' : 'text-warm-white/60'} leading-relaxed mb-4`}>{para}</p>
+                ))}
+                {section.id === 'biography' && (
+                  <Link to="/books" className="inline-flex items-center gap-2 text-gold font-medium hover:text-gold-light transition-colors group mt-2">
+                    Explore His Books <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                  </Link>
+                )}
+              </div>
+              <div className={`relative ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <PhotoPlaceholder label={`${section.label} Photo`} aspect="aspect-[4/3]" className="w-full" />
+              </div>
             </div>
           </section>
         ))}
       </div>
 
       {/* Timeline */}
-      <section className="section-padding bg-gradient-to-b from-navy to-navy-light">
+      <section className="section-padding bg-navy-light border-y border-gold/10">
         <div className="container-wide">
           <div className="text-center mb-14">
             <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Personal Journey</p>
@@ -141,7 +143,7 @@ export default function About() {
                 <div className="pb-2">
                   <span className="text-gold font-serif font-bold text-lg">{item.year}</span>
                   <h4 className="text-warm-white font-semibold mt-1 mb-1">{item.title}</h4>
-                  <p className="text-warm-white/40 text-sm">{item.desc}</p>
+                  <p className="text-warm-white/60 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -150,19 +152,19 @@ export default function About() {
       </section>
 
       {/* Mission Quote */}
-      <section className="py-20 bg-navy">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gold">
         <div className="container-narrow text-center">
           <div className="w-12 h-px bg-gold/40 mx-auto mb-8" />
-          <p className="font-serif text-2xl sm:text-3xl text-warm-white italic leading-relaxed mb-8">
+          <p className="font-serif text-2xl sm:text-3xl text-navy italic leading-relaxed mb-8">
             "My mission is simple: to leave a legacy of value and to help make the world a better place than I found it."
           </p>
-          <p className="text-gold font-medium">— Larry Bachman</p>
+          <p className="text-navy/80 font-medium">— Larry Bachman</p>
           <div className="w-12 h-px bg-gold/40 mx-auto mt-8" />
         </div>
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-gradient-to-b from-navy-light to-navy">
+      <section className="section-padding bg-navy-light border-t border-gold/10">
         <div className="container-wide">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -171,12 +173,12 @@ export default function About() {
               { icon: BookOpen, title: 'Storytelling', desc: 'Publishing weekly stories that capture the heart of community life.' },
               { icon: Leaf, title: 'Ranch Life', desc: 'Finding peace and inspiration on a Texas ranch.' },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="text-center p-6 rounded-lg bg-navy-card/40 border border-gold/10">
+              <div key={title} className="text-center p-6 rounded-lg bg-navy-card/60 border border-gold/20">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 mb-4">
                   <Icon size={20} className="text-gold" />
                 </div>
                 <h3 className="font-serif font-bold text-warm-white text-xl mb-2">{title}</h3>
-                <p className="text-warm-white/40 text-sm">{desc}</p>
+                <p className="text-warm-white/60 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>

@@ -42,27 +42,27 @@ export default function Devotionals() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-navy via-navy-light to-navy">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-gradient-to-br from-navy via-navy-light to-navy border-b border-gold/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.08),transparent_60%)]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Daily Inspiration</p>
-          <h1 className="text-5xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Devotionals</h1>
-          <p className="text-warm-white/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Devotionals</h1>
+          <p className="text-warm-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Weekly reflections on faith, grace, and living a purposeful life. Watch, reflect, and grow.
           </p>
         </div>
       </section>
 
       {/* Devotionals Grid */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-gold">
         <div className="container-wide">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <Loader2 size={32} className="text-gold animate-spin" />
+              <Loader2 size={32} className="text-navy animate-spin" />
             </div>
           ) : devotionals.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-warm-white/40 text-lg">No devotionals available yet. Check back soon!</p>
+              <p className="text-navy/70 text-lg">No devotionals available yet. Check back soon!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -73,7 +73,7 @@ export default function Devotionals() {
                 return (
                   <div
                     key={dev.id}
-                    className="group bg-navy-card/40 border border-gold/10 hover:border-gold/30 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1"
+                    className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1"
                   >
                     {/* Thumbnail / Video */}
                     <div className="relative aspect-video bg-navy-card/60">
@@ -117,7 +117,7 @@ export default function Devotionals() {
                       </div>
                       <h3 className="font-serif font-bold text-warm-white text-lg mb-2 leading-snug">{dev.title}</h3>
                       {dev.description && (
-                        <p className="text-warm-white/40 text-sm leading-relaxed mb-4">{dev.description}</p>
+                        <p className="text-warm-white/60 text-sm leading-relaxed mb-4">{dev.description}</p>
                       )}
                       {embedUrl && (
                         <a

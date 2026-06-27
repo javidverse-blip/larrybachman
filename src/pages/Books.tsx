@@ -75,12 +75,12 @@ export default function Books() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-navy via-navy-light to-navy">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-gradient-to-br from-navy via-navy-light to-navy border-b border-gold/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.08),transparent_60%)]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Published Works</p>
-          <h1 className="text-5xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Books</h1>
-          <p className="text-warm-white/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Books</h1>
+          <p className="text-warm-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             Stories of faith, choice, redemption, and the quiet grace woven through everyday life.
           </p>
         </div>
@@ -92,13 +92,13 @@ export default function Books() {
       </div>
 
       {/* Featured Books */}
-      <section className="section-padding bg-navy">
+      <section className="section-padding bg-gold">
         <div className="container-wide">
-          <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-2">Featured Releases</p>
-          <h2 className="text-3xl font-serif font-bold text-warm-white mb-10">Latest &amp; Most Popular</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <p className="text-navy/70 font-medium tracking-[0.2em] uppercase text-xs mb-2">Featured Releases</p>
+          <h2 className="text-3xl font-serif font-bold text-navy mb-10">Latest &amp; Most Popular</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20">
             {featured.map((book) => (
-              <div key={book.title} className="group bg-navy-card/40 border border-gold/10 hover:border-gold/30 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1">
+              <div key={book.title} className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1">
                 <div className="aspect-[3/4] overflow-hidden bg-navy-card/60">
                   <PhotoPlaceholder label={`${book.title} Book Cover`} aspect="aspect-[3/4]" className="w-full h-full rounded-none border-0" />
                 </div>
@@ -108,7 +108,7 @@ export default function Books() {
                   </span>
                   <h3 className="font-serif font-bold text-warm-white text-lg mb-1 leading-snug">{book.title}</h3>
                   <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
-                  <p className="text-warm-white/40 text-sm leading-relaxed flex-1">{book.description}</p>
+                  <p className="text-warm-white/60 text-sm leading-relaxed flex-1">{book.description}</p>
                   {book.reviews.length > 0 && (
                     <div className="mt-4 pt-4 border-t border-gold/10">
                       <div className="flex items-center gap-1 mb-1">
@@ -124,14 +124,14 @@ export default function Books() {
           </div>
 
           {/* More Books */}
-          <div className="border-t border-gold/10 pt-16">
-            <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-2">More Titles</p>
-            <h2 className="text-3xl font-serif font-bold text-warm-white mb-10">Complete Collection</h2>
+          <div className="border-t border-navy/20 pt-16">
+            <p className="text-navy/70 font-medium tracking-[0.2em] uppercase text-xs mb-2">More Titles</p>
+            <h2 className="text-3xl font-serif font-bold text-navy mb-10">Complete Collection</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {rest.map((book) => (
                 <div
                   key={book.title}
-                  className="group bg-navy-card/40 border border-gold/10 hover:border-gold/30 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1 cursor-pointer"
+                  className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1 cursor-pointer"
                   onClick={() => setExpandedBook(expandedBook === book.title ? null : book.title)}
                 >
                   <div className="aspect-[3/4] overflow-hidden bg-navy-card/60">
@@ -143,7 +143,7 @@ export default function Books() {
                     </span>
                     <h3 className="font-serif font-bold text-warm-white text-base mb-1 leading-snug">{book.title}</h3>
                     <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
-                    <p className={`text-warm-white/40 text-sm leading-relaxed transition-all ${expandedBook === book.title ? '' : 'line-clamp-3'}`}>
+                    <p className={`text-warm-white/60 text-sm leading-relaxed transition-all ${expandedBook === book.title ? '' : 'line-clamp-3'}`}>
                       {book.description}
                     </p>
                     <div className="mt-4 pt-4 border-t border-gold/10">
@@ -160,11 +160,11 @@ export default function Books() {
       </section>
 
       {/* Music Section */}
-      <section className="section-padding bg-gradient-to-b from-navy-light to-navy">
+      <section className="section-padding bg-navy-light border-y border-gold/10">
         <div className="container-wide text-center">
           <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Beyond the Page</p>
           <h2 className="text-3xl font-serif font-bold text-warm-white mb-4">Gospel Music by Larry</h2>
-          <p className="text-warm-white/40 leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="text-warm-white/60 leading-relaxed max-w-2xl mx-auto mb-8">
             Alongside his books, Larry has written and released gospel music including "The Gift" and "The Promise." "The Promise" was featured in the film <em>Sparrows Nesting</em>, premiered at Hollywood's Grauman's Theatre.
           </p>
           <a
