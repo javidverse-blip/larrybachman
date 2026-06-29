@@ -4,8 +4,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Books from './pages/Books';
-import Media from './pages/Media';
-import Devotionals from './pages/Devotionals';
+import Music from './pages/Music';
+import MediaGallery from './pages/MediaGallery';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -18,8 +19,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/books" element={<Books />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/devotionals" element={<Devotionals />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/media-gallery" element={<MediaGallery />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
