@@ -89,7 +89,7 @@
 
 .home-hero__copy h1 {
   margin: 0 0 28px;
-  color: #d5d3ce;
+  color: #fff;
   font-size: clamp(3.25rem, 6vw, 6.8rem);
   font-weight: 600;
   line-height: 1.08;

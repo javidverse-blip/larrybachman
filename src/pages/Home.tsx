@@ -111,7 +111,7 @@ export default function Home() {
                   <h3 className="font-serif font-bold text-warm-white text-lg mb-1">{book.title}</h3>
                   <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
                   <p className="text-warm-white/40 text-sm leading-relaxed mb-4">{book.description}</p>
-                  <a href={book.href} className="inline-flex items-center gap-2 rounded-full bg-warm-white px-5 py-2.5 text-sm font-medium text-gold-600 transition-all duration-300 hover:bg-gold-light hover:text-[#251908]" target="_blank" rel="noreferrer">
+                  <a href={book.href} className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-navy transition-all duration-300 hover:bg-gold-light" target="_blank" rel="noreferrer">
                     View on Amazon <ArrowRight size={13} />
                   </a>
                 </div>
@@ -160,7 +160,7 @@ export default function Home() {
             </div>
             <div className="text-right lg:text-left [grid-area:quote]">
               <Quote size={40} className="text-[#251908]/40 ml-auto lg:ml-0 mb-8" />
-              <blockquote className="font-serif text-xl sm:text-2xl text-[#251908] leading-relaxed mb-6 italic">
+              <blockquote className="text-lg sm:text-xl text-[#251908] leading-relaxed mb-6 font-normal">
                 "Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration."
               </blockquote>
               <p className="text-[#251908] font-semibold">TC Bradley</p>

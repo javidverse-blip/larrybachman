@@ -60,11 +60,25 @@ export default function MediaGallery() {
             </div>
           </div>
 
-          <div className="mx-auto mt-20 max-w-4xl rounded-2xl border border-gold/25 bg-navy-card/70 p-7 text-center shadow-2xl sm:p-12">
-            <Quote size={40} className="mx-auto mb-7 text-gold/70" />
-            <blockquote className="mb-7 font-serif text-xl italic leading-relaxed text-warm-white sm:text-2xl">“Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration to those who read his work. Larry’s legacy isn’t just about the words he writes—it’s about the lives he impacts along the way.”</blockquote>
-            <p className="font-semibold text-gold">TC Bradley</p>
-            <p className="text-sm text-warm-white/55">Nationally Syndicated Host</p>
+        </div>
+      </section>
+
+      <section className="section-padding bg-gold">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
+            <div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-gold/20 bg-navy-card/60">
+                <img src="/tc-bradley-larry.png" alt="TC Bradley with Larry Bachman" className="h-full w-full object-cover" />
+              </div>
+            </div>
+            <div className="text-right lg:text-left">
+              <Quote size={40} className="mb-8 ml-auto text-[#251908]/40 lg:ml-0" />
+              <blockquote className="mb-6 text-lg font-normal leading-relaxed text-[#251908] sm:text-xl">
+                "Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration."
+              </blockquote>
+              <p className="font-semibold text-[#251908]">TC Bradley</p>
+              <p className="text-sm text-[#251908]/70">Nationally Syndicated Host</p>
+            </div>
           </div>
         </div>
       </section>

@@ -27,7 +27,7 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const hasTransparentHero = location.pathname === '/' || location.pathname === '/about';
+  const hasTransparentHero = location.pathname === '/';
 
   return (
     <header

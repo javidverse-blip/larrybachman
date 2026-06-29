@@ -1,4 +1,4 @@
-import { Music2, Play, Quote } from 'lucide-react';
+import { Music2, Play } from 'lucide-react';
 import PhotoPlaceholder from '../components/PhotoPlaceholder';
 import VideoPlaceholder from '../components/VideoPlaceholder';
 
@@ -137,14 +137,6 @@ export default function Music() {
             </div>
           </article>
 
-          <aside className="mx-auto mt-16 max-w-5xl border-y border-gold/25 px-4 py-12 text-center sm:px-10">
-            <Quote size={38} className="mx-auto mb-7 text-gold/70" />
-            <blockquote className="mb-7 text-lg font-normal leading-relaxed text-warm-white/80 sm:text-xl">
-              “Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration to those who read his work. Larry’s legacy isn’t just about the words he writes—it’s about the lives he impacts along the way.”
-            </blockquote>
-            <p className="font-semibold text-gold">TC Bradley</p>
-            <p className="text-sm text-warm-white/55">Nationally Syndicated Host</p>
-          </aside>
         </div>
       </section>
     </div>

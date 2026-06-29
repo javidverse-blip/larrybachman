@@ -35,7 +35,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="section-padding bg-[#d5d3ce]">
+      <section className="section-padding bg-gold">
         <div className="container-wide">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {posts.map((post) => (
