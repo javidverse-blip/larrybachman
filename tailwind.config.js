@@ -4,26 +4,26 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+        serif: ['Cinzel', 'Georgia', 'serif'],
+        sans: ['Josefin Sans', 'system-ui', 'sans-serif'],
+        display: ['Cinzel', 'Georgia', 'serif'],
       },
       colors: {
         navy: {
           DEFAULT: '#251908',
-          light: '#2e2009',
-          card: '#362610',
+          light: '#6b5646',
+          card: '#6b5646',
         },
         gold: {
-          DEFAULT: '#d2a330',
-          light: '#e8bc4a',
+          DEFAULT: '#b28f3e',
+          light: '#d5d3ce',
           50:  '#FBF7EC',
           100: '#F5EDD0',
           200: '#EDD9A3',
           300: '#E3C16F',
           400: '#D9A94A',
           500: '#C49A28',
-          600: '#A87D1E',
+          600: '#9f712c',
           700: '#865F18',
           800: '#664817',
           900: '#4A3312',
@@ -47,7 +47,7 @@ export default {
           800: '#1E1E23',
           900: '#121215',
         },
-        'warm-white': '#fff',
+        'warm-white': '#d5d3ce',
       },
     },
   },

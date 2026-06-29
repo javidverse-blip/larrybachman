@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Mic, Quote, ChevronDown } from 'lucide-react';
+import { ArrowRight, BookOpen, Mic, Quote } from 'lucide-react';
 
 const featuredBooks = [
   {
@@ -27,55 +27,42 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen overflow-hidden bg-[#251908]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.06),transparent_65%)]" />
+      <section className="home-hero">
+        <div className="home-hero__glow" />
+        <div className="home-hero__inner">
+          <div className="home-hero__copy">
+            <h1>
+              YOUR STORY<br />
+              <span>ISN'T OVER</span>
+            </h1>
+            <p>
+              Falling down is not the end of your story. Your story isn't over.<br className="hidden sm:block" />
+              The fall may be part of your story, but it does not have to<br className="hidden sm:block" />
+              define your future.
+            </p>
+            <Link to="/about" className="btn-primary">
+              Meet Larry <ArrowRight size={18} />
+            </Link>
+          </div>
 
-        <div className="relative z-10 max-w-7xl min-h-screen mx-auto px-4 sm:px-6 lg:px-8 pt-20 w-full flex">
-          <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center lg:items-stretch">
-            <div className="relative z-10 max-w-2xl py-10 sm:py-14 lg:py-20 flex flex-col justify-center">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-warm-white leading-[1.08] mb-6">
-                YOUR STORY<br />
-                <span className="text-gold">ISN'T OVER</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-warm-white/55 leading-relaxed mb-6 max-w-xl">
-                Falling down is not the end of your story. Your story isn't over. The fall may be part of your story, but it does not have to define your future.
-              </p>
-
-              <div className="flex flex-col items-start">
-                <Link
-                  to="/about"
-                  className="btn-primary mb-2"
-                >
-                  Meet Larry <ArrowRight size={16} />
-                </Link>
-
-                <div className="relative w-full max-w-[700px] -mx-2 sm:-mx-4">
-                  <img
-                    src="/books-prev.png"
-                    alt="Books Stack"
-                    className="block w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="relative flex min-h-[360px] sm:min-h-[480px] lg:min-h-0 items-end justify-center lg:justify-end">
-              <img
-                src="/larry-b.png"
-                alt="Larry Bachman Portrait"
-                className="block w-full max-w-[420px] sm:max-w-[500px] lg:absolute lg:bottom-0 lg:right-0 lg:max-w-[560px] h-auto"
-              />
-            </div>
+          <div className="home-hero__portrait">
+            <img src="/larry-b.png" alt="Larry Bachman" />
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 animate-bounce">
-          <div className="w-px h-8 bg-warm-white/20" />
-          <ChevronDown size={16} className="text-gold/50" />
+
+        <div className="home-hero__book-shelf">
+          <div className="home-hero__books">
+            <img
+              src="/all-books.png"
+              alt="Larry B. Bachman's complete book collection"
+              className="home-hero__all-books"
+            />
+          </div>
         </div>
       </section>
 
       {/* About preview */}
-     <section className="section-padding bg-[#d2a330]">
+     <section className="section-padding bg-gold">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.4fr_0.8fr] gap-8 xl:gap-12 items-center">
             <div className="flex justify-center h-full">
@@ -157,7 +144,7 @@ export default function Home() {
                   <h3 className="font-serif font-bold text-warm-white text-lg mb-1">{book.title}</h3>
                   <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
                   <p className="text-warm-white/40 text-sm leading-relaxed mb-4">{book.description}</p>
-                  <a href={book.href} className="inline-flex items-center gap-2 rounded-full bg-warm-white px-5 py-2.5 text-sm font-medium text-[#d2a330] transition-all duration-300 hover:bg-gold-light hover:text-[#251908]" target="_blank" rel="noreferrer">
+                  <a href={book.href} className="inline-flex items-center gap-2 rounded-full bg-warm-white px-5 py-2.5 text-sm font-medium text-gold-600 transition-all duration-300 hover:bg-gold-light hover:text-[#251908]" target="_blank" rel="noreferrer">
                     View on Amazon <ArrowRight size={13} />
                   </a>
                 </div>
@@ -168,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* Television Feature */}
-      <section className="section-padding bg-[#d2a330]">
+      <section className="section-padding bg-gold">
         <div className="container-wide">
           <div
             className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center [grid-template-areas:'video'_'tvText'_'quote'_'tcImage'] lg:[grid-template-areas:'video_tvText'_'quote_tcImage']"
