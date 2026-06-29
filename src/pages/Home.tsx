@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Mic, Quote } from 'lucide-react';
+import { ArrowRight, Quote } from 'lucide-react';
 
 const featuredBooks = [
   {
@@ -16,11 +16,6 @@ const featuredBooks = [
     href: 'https://a.co/d/0bwgMITp',
     cover: '/whereareyougoing.png',
   },
-];
-
-const pillars = [
-  { icon: BookOpen, label: 'Author', desc: 'Faith-based books and stories that inspire reflection and growth.' },
-  { icon: Mic, label: 'Speaker', desc: 'Messages of faith, redemption, and purpose that encourage audiences to share the good within them.' },
 ];
 
 export default function Home() {
@@ -62,11 +57,23 @@ export default function Home() {
       </section>
 
       {/* About preview */}
-     <section className="section-padding bg-gold">
+      <section className="section-padding bg-navy border-b border-white/20">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.4fr_0.8fr] gap-8 xl:gap-12 items-center">
-            <div className="flex justify-center h-full">
-              <div className="relative w-full max-w-[280px] aspect-square rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="max-w-2xl">
+              <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Meet the Author</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-warm-white mb-6 leading-tight">
+                About Larry Bachman
+              </h2>
+              <p className="text-warm-white/75 leading-relaxed mb-8">
+                Larry B. Bachman is an author and speaker whose life message is shaped by hard lessons, second chances, faith, and the conviction that no story is beyond redemption. Through his books and speaking, Larry encourages people to rise after failure, recognize the good still within them, and share that good with the world.
+              </p>
+              <Link to="/about" className="btn-primary">
+                Read About Larry <ArrowRight size={18} />
+              </Link>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[560px] aspect-[4/3] rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20 shadow-2xl shadow-black/25">
                 <img
                   src="/larry-office.png"
                   alt="Larry Bachman in his office"
@@ -74,46 +81,6 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="text-center max-w-2xl mx-auto px-2 sm:px-4 lg:px-0">
-              <p className="text-[#251908] font-medium tracking-[0.2em] uppercase text-xs mb-3">Larry B. Bachman</p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#251908] mb-6 leading-tight">
-                A life shaped by hard lessons, second chances, and the conviction that no life is beyond redemption
-              </h2>
-              <p className="text-[#251908]/90 leading-relaxed mb-4 max-w-xl mx-auto">
-                The message woven throughout his books, speaking, and ministry is simple:
-              </p>
-              <blockquote className="font-serif text-xl text-[#251908]/90 leading-relaxed mb-4 italic max-w-xl mx-auto">
-                "You still have much to contribute to the world. There's a fountain of good in you. Share it with the world, even if they don't want to hear it. Plant the seeds of truth and let them grow."
-              </blockquote>
-              <p className="text-[#251908] font-semibold mb-6">Larry B. Bachman</p>
-              <p className="text-[#251908]/90 leading-relaxed mb-8 max-w-xl mx-auto">
-                That belief has guided Larry through successes, failures, personal struggles, and victories, becoming the foundation of the message he now shares with others.
-              </p>
-              <Link to="/about" className="inline-flex items-center justify-center gap-2 text-[#251908] font-medium hover:text-[#1d1507] transition-colors group">
-                Read His Full Story <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-            <div className="flex justify-center h-full">
-              <div className="relative w-full max-w-[280px] aspect-square rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
-                <img
-                  src="/road.png"
-                  alt="Larry Bachman on the road"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
-            {pillars.map(({ icon: Icon, label, desc }) => (
-              <div key={label} className="text-center p-6 rounded-lg bg-navy-card/40 border border-gold/10">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 mb-4">
-                  <Icon size={20} className="text-gold" />
-                </div>
-                <h3 className="font-serif font-semibold text-lg text-warm-white mb-2">{label}</h3>
-                <p className="text-warm-white text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -158,7 +125,7 @@ export default function Home() {
       <section className="section-padding bg-gold">
         <div className="container-wide">
           <div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center [grid-template-areas:'video'_'tvText'_'quote'_'tcImage'] lg:[grid-template-areas:'video_tvText'_'quote_tcImage']"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center [grid-template-areas:'video'_'tvText'_'tcImage'_'quote'] lg:[grid-template-areas:'video_tvText'_'tcImage_quote']"
           >
             <div className="[grid-area:video]">
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
@@ -182,14 +149,6 @@ export default function Home() {
                 Larry Bachman has stepped into the national spotlight with a legacy message that continues to inspire and challenge audiences across the country.
               </p>
             </div>
-            <div className="text-right lg:text-left [grid-area:quote]">
-              <Quote size={40} className="text-[#251908]/40 ml-auto lg:ml-0 mb-8" />
-              <blockquote className="font-serif text-xl sm:text-2xl text-[#251908] leading-relaxed mb-6 italic">
-                "Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration."
-              </blockquote>
-              <p className="text-[#251908] font-semibold">TC Bradley</p>
-              <p className="text-[#251908]/70 text-sm">Nationally Syndicated Host</p>
-            </div>
             <div className="[grid-area:tcImage]">
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
                 <img
@@ -198,6 +157,14 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
+            </div>
+            <div className="text-right lg:text-left [grid-area:quote]">
+              <Quote size={40} className="text-[#251908]/40 ml-auto lg:ml-0 mb-8" />
+              <blockquote className="font-serif text-xl sm:text-2xl text-[#251908] leading-relaxed mb-6 italic">
+                "Larry Bachman is a man who understands the power of a story. His life experiences, from the music industry to publishing, have given him a rare perspective that few possess. His ability to capture the essence of real-life struggles and triumphs is a gift that brings hope and inspiration."
+              </blockquote>
+              <p className="text-[#251908] font-semibold">TC Bradley</p>
+              <p className="text-[#251908]/70 text-sm">Nationally Syndicated Host</p>
             </div>
           </div>
         </div>
