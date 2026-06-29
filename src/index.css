@@ -44,8 +44,8 @@
  * layout context, each moved at a different rate as the viewport changed.
  *
  * The hero now uses a two-column grid in the dark region and a normal-flow gold
- * shelf. Only decorative backgrounds remain absolute; content participates in
- * layout, so its spacing and reading order stay stable at every breakpoint.
+ * shelf. Only the decorative book artwork crosses the section boundary; the
+ * copy and portrait participate in layout so their spacing remains stable.
  */
 .home-hero {
   position: relative;
@@ -106,7 +106,7 @@
   display: flex;
   min-width: 0;
   height: 100%;
-  padding-top: clamp(55px, 4vw, 75px);
+  padding-top: 0;
   align-items: flex-end;
   justify-content: center;
   line-height: 0;
@@ -114,10 +114,10 @@
 
 .home-hero__portrait img {
   display: block;
-  width: min(100%, 760px);
+  width: min(100%, 830px);
   height: auto;
   max-width: 100%;
-  max-height: calc(100% - clamp(55px, 4vw, 75px));
+  max-height: 100%;
   object-fit: contain;
   object-position: bottom center;
 }
@@ -126,7 +126,7 @@
   position: relative;
   z-index: 20;
   height: clamp(220px, 17vw, 300px);
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(100deg, #b28f3e 0%, #9f712c 100%);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.13);
 }
@@ -149,16 +149,16 @@
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(10px 14px 10px rgba(37, 25, 8, 0.42));
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -68%);
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-hero__inner {
-    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 1.05fr);
     gap: clamp(18px, 3vw, 32px);
     width: min(100% - 2.5rem, 960px);
-    min-height: 620px;
-    padding-top: 100px;
+    min-height: clamp(460px, 58.6vw, 600px);
+    padding-top: 90px;
   }
   .home-hero__copy h1 {
     font-size: clamp(3rem, 6vw, 3.85rem);
@@ -167,7 +167,7 @@
     font-size: 18px;
   }
   .home-hero__portrait img {
-    width: min(100%, 560px);
+    width: min(100%, 620px);
   }
 }
 
@@ -209,6 +209,7 @@
   }
   .home-hero__book-shelf {
     height: clamp(170px, 50vw, 215px);
+    overflow: hidden;
   }
   .home-hero__books {
     width: 100%;
@@ -216,6 +217,7 @@
   .home-hero__all-books {
     left: 50%;
     width: min(108%, 600px);
+    transform: translate(-50%, -50%);
   }
 }
 
