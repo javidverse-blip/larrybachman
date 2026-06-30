@@ -83,8 +83,8 @@
 
 @media (min-width: 1025px) {
   .home-hero__copy {
-    /* Match the navbar's max-w-7xl content rail at every desktop width. */
-    padding-left: min(360px, max(0px, calc((100vw - 1280px) / 2 + 60px)));
+    /* Keep the copy locked instead of recalculating its position during zoom. */
+    padding-left: 140px;
   }
 }
 
