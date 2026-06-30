@@ -24,7 +24,9 @@ export default function Home() {
       {/* Hero */}
       <section className="home-hero">
         <div className="home-hero__glow" />
-        <div className="home-hero__inner">
+        <div className="home-hero__shelf" />
+
+        <div className="home-hero__stage">
           <div className="home-hero__copy">
             <h1>
               YOUR STORY<br />
@@ -43,16 +45,12 @@ export default function Home() {
           <div className="home-hero__portrait">
             <img src="/larry-b.png" alt="Larry Bachman" />
           </div>
-        </div>
 
-        <div className="home-hero__book-shelf">
-          <div className="home-hero__books">
-            <img
-              src="/all-books.png"
-              alt="Larry B. Bachman's complete book collection"
-              className="home-hero__all-books"
-            />
-          </div>
+          <img
+            src="/all-books.png"
+            alt="Larry B. Bachman's complete book collection"
+            className="home-hero__books"
+          />
         </div>
       </section>
 

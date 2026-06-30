@@ -37,19 +37,10 @@
   }
 }
 
-/* Homepage hero
- * Root cause of the former collisions: the portrait and gold shelf were absolute,
- * while the book art used viewport sizing plus translate transforms. Mobile then
- * added fixed heights and negative margins. Because those layers did not share a
- * layout context, each moved at a different rate as the viewport changed.
- *
- * The hero now uses a two-column grid in the dark region and a normal-flow gold
- * shelf. Only the decorative book artwork crosses the section boundary; the
- * copy and portrait participate in layout so their spacing remains stable.
- */
+/* Homepage hero: fixed, art-directed compositions for each breakpoint. */
 .home-hero {
   position: relative;
-  height: 990px;
+  height: 1120px;
   overflow: hidden;
   background: #251908;
 }
@@ -62,23 +53,34 @@
     linear-gradient(110deg, rgba(107, 86, 70, 0.08), transparent 52%);
 }
 
-.home-hero__inner {
+.home-hero__shelf {
+  position: absolute;
+  top: 890px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 230px;
+  background: linear-gradient(100deg, #b28f3e 0%, #9f712c 100%);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.13);
+}
+
+.home-hero__stage {
   position: relative;
-  z-index: 10;
-  width: 1800px;
-  height: 760px;
+  z-index: 2;
+  width: 1600px;
+  height: 1120px;
   margin: 0 auto;
 }
 
 .home-hero__copy {
   position: absolute;
-  top: 166px;
-  left: 140px;
-  z-index: 2;
+  top: 105px;
+  left: 14px;
   width: 850px;
 }
 
 .home-hero__copy h1 {
+  width: 850px;
   margin: 0 0 28px;
   color: #fff;
   font-size: 108.8px;
@@ -92,7 +94,7 @@
 }
 
 .home-hero__copy p {
-  width: 760px;
+  width: 800px;
   margin-bottom: 30px;
   color: rgba(213, 211, 206, 0.88);
   font-size: 20px;
@@ -101,52 +103,30 @@
 
 .home-hero__portrait {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 795px;
-  height: 760px;
+  right: -80px;
+  bottom: 230px;
+  width: 720px;
+  height: 800px;
   line-height: 0;
 }
 
 .home-hero__portrait img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
   display: block;
-  width: 760px;
-  height: 760px;
+  width: 720px;
+  height: 800px;
   object-fit: contain;
   object-position: bottom center;
 }
 
-.home-hero__book-shelf {
-  position: absolute;
-  top: 760px;
-  right: 0;
-  left: 0;
-  z-index: 20;
-  height: 230px;
-  overflow: visible;
-  background: linear-gradient(100deg, #b28f3e 0%, #9f712c 100%);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.13);
-}
-
 .home-hero__books {
-  position: relative;
-  width: 1800px;
-  height: 230px;
-  margin: 0 auto;
-}
-
-.home-hero__all-books {
   position: absolute;
-  top: -268px;
-  left: 0;
+  bottom: -2px;
+  left: -170px;
+  z-index: 3;
   display: block;
-  width: 990px;
+  width: 1050px;
   height: auto;
   object-fit: contain;
-  object-position: center;
   filter: drop-shadow(10px 14px 10px rgba(37, 25, 8, 0.42));
 }
 
@@ -154,9 +134,13 @@
   .home-hero {
     height: 815px;
   }
-  .home-hero__inner {
+  .home-hero__shelf {
+    top: 600px;
+    height: 215px;
+  }
+  .home-hero__stage {
     width: 960px;
-    height: 600px;
+    height: 815px;
   }
   .home-hero__copy {
     top: 140px;
@@ -171,6 +155,8 @@
     font-size: 18px;
   }
   .home-hero__portrait {
+    right: 0;
+    bottom: 215px;
     width: 487px;
     height: 510px;
   }
@@ -178,16 +164,8 @@
     width: 487px;
     height: 487px;
   }
-  .home-hero__book-shelf {
-    top: 600px;
-    height: 215px;
-  }
   .home-hero__books {
-    width: 960px;
-    height: 215px;
-  }
-  .home-hero__all-books {
-    top: -61px;
+    bottom: -61px;
     left: 180px;
     width: 600px;
   }
@@ -197,9 +175,13 @@
   .home-hero {
     height: 990px;
   }
-  .home-hero__inner {
+  .home-hero__shelf {
+    top: 775px;
+    height: 215px;
+  }
+  .home-hero__stage {
     width: 560px;
-    height: 775px;
+    height: 990px;
   }
   .home-hero__copy {
     top: 102px;
@@ -226,7 +208,7 @@
   .home-hero__portrait {
     top: 400px;
     right: 30px;
-    bottom: auto;
+    bottom: unset;
     width: 500px;
     height: 375px;
   }
@@ -234,17 +216,8 @@
     width: 500px;
     height: 500px;
   }
-  .home-hero__book-shelf {
-    top: 775px;
-    height: 215px;
-    overflow: hidden;
-  }
   .home-hero__books {
-    width: 560px;
-    height: 215px;
-  }
-  .home-hero__all-books {
-    top: -61px;
+    bottom: -61px;
     left: -20px;
     width: 600px;
   }
@@ -254,9 +227,13 @@
   .home-hero {
     height: 960px;
   }
-  .home-hero__inner {
+  .home-hero__shelf {
+    top: 765px;
+    height: 195px;
+  }
+  .home-hero__stage {
     width: 390px;
-    height: 765px;
+    height: 960px;
   }
   .home-hero__copy {
     left: 16px;
@@ -278,16 +255,8 @@
     width: 358px;
     height: 358px;
   }
-  .home-hero__book-shelf {
-    top: 765px;
-    height: 195px;
-  }
   .home-hero__books {
-    width: 390px;
-    height: 195px;
-  }
-  .home-hero__all-books {
-    top: -21px;
+    bottom: -21px;
     left: -16px;
     width: 422px;
   }
