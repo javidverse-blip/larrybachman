@@ -20,8 +20,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center overflow-hidden">
                 <img
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Larry B. Bachman logo"
+                  width="36"
+                  height="36"
+                  loading="lazy"
+                  decoding="async"
                   className="w-9 h-9 object-contain"
                 />
               </div>

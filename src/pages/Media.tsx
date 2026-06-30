@@ -3,7 +3,7 @@ export default function Media() {
     <div className="min-h-screen bg-navy">
       <section
         className="relative overflow-hidden border-b border-gold/10 bg-cover bg-center pb-16 pt-28 sm:pb-20 sm:pt-32"
-        style={{ backgroundImage: "url('/media-bg.png')" }}
+        style={{ backgroundImage: "url('/media-bg.webp')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
@@ -51,7 +51,7 @@ export default function Media() {
           </div>
           <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div className="mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55">
-              <img src="/Hollywood’s-Grauman’s-Theatre.jpg" alt="Larry Bachman at Hollywood’s Grauman’s Theatre" className="h-full w-full object-cover" />
+              <img src="/Hollywood’s-Grauman’s-Theatre.webp" alt="Larry Bachman at Hollywood’s Grauman’s Theatre" width="437" height="579" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="mb-6 font-serif text-4xl font-bold text-warm-white">Hollywood’s Grauman’s Theatre</h2>
@@ -67,7 +67,7 @@ export default function Media() {
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <div>
               <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-gold/20 bg-navy-card/60">
-                <img src="/tc-bradley-larry.png" alt="TC Bradley with Larry Bachman" className="h-full w-full object-cover" />
+                <img src="/tc-bradley-larry.webp" alt="TC Bradley with Larry Bachman" width="702" height="603" loading="lazy" decoding="async" className="h-full w-full object-cover" />
               </div>
             </div>
             <div className="text-right lg:text-left">
@@ -84,7 +84,7 @@ export default function Media() {
         <div className="container-wide">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55">
-              <img src="/Larry-snyder.png" alt="Larry Bachman featured in the Snyder County Times" className="aspect-[2/1] h-full w-full object-contain" />
+              <img src="/Larry-snyder.webp" alt="Larry Bachman featured in the Snyder County Times" width="1362" height="682" loading="lazy" decoding="async" className="aspect-[2/1] h-full w-full object-contain" />
             </div>
             <div>
               <h2 className="mb-6 font-serif text-4xl font-bold text-warm-white">Discover Larry Bachman’s Inspirational Journey in the Snyder County Times</h2>

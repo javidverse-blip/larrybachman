@@ -42,8 +42,11 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center overflow-hidden group-hover:bg-gold/20 transition-colors">
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Larry B. Bachman logo"
+                width="36"
+                height="36"
+                decoding="async"
                 className="w-9 h-9 object-contain"
               />
             </div>

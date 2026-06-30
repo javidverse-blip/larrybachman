@@ -18,7 +18,7 @@ const books: Book[] = [
     title: 'Lady and Jesse',
     description:
       'A heartfelt story of love, faith, and commitment. Lady and Jesse Make a Promise follows a dream to build a Bible-based home for disadvantaged children, showing how trust, sacrifice, and hope can shape a life of purpose.',
-    image: '/6-lady-and-jesse-removebg-preview.png',
+    image: '/6-lady-and-jesse-removebg-preview.webp',
     amazonUrl: 'https://a.co/d/04w5pDKN',
     videoUrl: 'https://www.youtube.com/embed/_RlRGPx7rAA',
     category: 'featured',
@@ -28,7 +28,7 @@ const books: Book[] = [
     title: 'Tourniquet',
     description:
       'A faith-centered story about pain, healing, and redemption. Tourniquet points readers toward forgiveness, restoration, and God’s power to bring hope even through life’s deepest wounds.',
-    image: '/5-tourniquet-removebg-preview.png',
+    image: '/5-tourniquet-removebg-preview.webp',
     amazonUrl: 'https://a.co/d/0gqRW2th',
     videoUrl: 'https://www.youtube.com/embed/_-gz2G9L4g8',
     category: 'featured',
@@ -38,7 +38,7 @@ const books: Book[] = [
     title: 'Where Are You?',
     description:
       'A children’s faith-based book built around the question God asked Adam: “Where are you?” Through simple storytelling, it teaches children about faith, trust, obedience, and God’s loving call to His people.',
-    image: '/4-where-are-are_you-removebg-preview.png',
+    image: '/4-where-are-are_you-removebg-preview.webp',
     amazonUrl: 'https://a.co/d/00u8BRoM',
     videoUrl: 'https://www.youtube.com/embed/g51oxxTjM-8',
     category: 'with-video',
@@ -48,7 +48,7 @@ const books: Book[] = [
     title: 'Where Are You? Spanish Edition',
     description:
       'The Spanish edition of Where Are You? introduces children and families to one of the Bible’s most meaningful questions. It encourages readers to reflect on faith, obedience, accountability, and where they stand with God.',
-    image: '/where-are-you-spanish.png',
+    image: '/where-are-you-spanish.webp',
     // New Amazon URL matched to the Spanish cover; swap here if the listing order differs.
     amazonUrl: 'https://a.co/d/0bTw3yAL',
     category: 'with-video',
@@ -58,7 +58,7 @@ const books: Book[] = [
     title: 'Where Are You Going?',
     description:
       'A faith-based story about Larry facing peer pressure, conflict, friendship, and difficult choices while learning more about God and the Bible. The book helps young readers understand choice, accountability, and biblical guidance.',
-    image: '/where-are-you-going.png',
+    image: '/where-are-you-going.webp',
     // New Amazon URL matched to the Where Are You Going? cover; swap here if needed.
     amazonUrl: 'https://a.co/d/0fUqg4gT',
     videoUrl: 'https://www.youtube.com/embed/les4leIlBN8',
@@ -69,7 +69,7 @@ const books: Book[] = [
     title: 'Lady and the Carpenter',
     description:
       'Out of an unfortunate chain of events comes a renewed message of faith, family, and grace. This story reminds readers that God can restore what feels broken.',
-    image: '/1-lady-and-carpenter-removebg-preview.png',
+    image: '/1-lady-and-carpenter-removebg-preview.webp',
     amazonUrl: 'https://a.co/d/0akINls7',
     category: 'other',
     featured: false,
@@ -78,7 +78,7 @@ const books: Book[] = [
     title: 'Reuben versus Meyer',
     description:
       'A story of choices, consequences, and spiritual lessons. Reuben versus Meyer invites readers to reflect on character, responsibility, and where they stand when life takes an unexpected turn.',
-    image: '/2-reuben-versus-meyer-removebg-preview.png',
+    image: '/2-reuben-versus-meyer-removebg-preview.webp',
     amazonUrl: 'https://a.co/d/0bpVYBWx',
     category: 'other',
     featured: false,
@@ -87,7 +87,7 @@ const books: Book[] = [
     title: 'Living a Prosperous Life',
     description:
       'Living a Prosperous Life explores the battle between good and evil, the hope found in Jesus, and the possibility of living with joy, purpose, and spiritual prosperity.',
-    image: '/3-living-prosp-life-removebg-preview.png',
+    image: '/3-living-prosp-life-removebg-preview.webp',
     amazonUrl: 'https://a.co/d/0iDQEZ8g',
     category: 'other',
     featured: false,
@@ -135,6 +135,8 @@ function BookCard({ book, featured = false }: { book: Book; featured?: boolean }
           <img
             src={book.image}
             alt={`${book.title} book cover`}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.35)] transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
@@ -159,7 +161,7 @@ export default function Books() {
     <div className="min-h-screen bg-navy">
       <section
         className="relative overflow-hidden border-b border-gold/10 bg-cover bg-center pb-16 pt-28 sm:pb-20 sm:pt-32"
-        style={{ backgroundImage: "url('/books-bg.png')" }}
+        style={{ backgroundImage: "url('/books-bg.webp')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
@@ -193,7 +195,7 @@ Every story has a beginning. Every life has another chapter. Whether through fic
       <section className="border-y border-navy/15 bg-gold px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-xl border border-gold/25 bg-navy-card/50 shadow-xl shadow-black/25">
-            <img src="/larry-office.png" alt="Larry B. Bachman" className="h-full w-full object-cover" />
+            <img src="/larry-office.webp" alt="Larry B. Bachman" width="1080" height="1080" loading="lazy" decoding="async" className="h-full w-full object-cover" />
           </div>
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Behind the Stories</p>

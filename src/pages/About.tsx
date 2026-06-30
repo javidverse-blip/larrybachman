@@ -20,7 +20,7 @@ export default function About() {
     <div className="min-h-screen bg-navy">
       <section
         className="relative overflow-hidden border-b border-gold/10 bg-cover bg-[68%_center] pb-16 pt-28 sm:pb-20 sm:pt-32 lg:bg-center"
-        style={{ backgroundImage: "url('/About-larry.png')" }}
+        style={{ backgroundImage: "url('/About-larry.webp')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/55" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
@@ -37,7 +37,7 @@ export default function About() {
         <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <div className="relative mx-auto w-full max-w-[480px]">
             <div className="absolute -left-3 -top-3 h-20 w-20 border-l-2 border-t-2 border-gold/55" />
-            <img src="/larry-office.png" alt="Larry Bachman in his office" className="relative aspect-[4/5] w-full rounded-lg object-cover shadow-xl shadow-black/25" />
+            <img src="/larry-office.webp" alt="Larry Bachman in his office" width="1080" height="1080" loading="lazy" decoding="async" className="relative aspect-[4/5] w-full rounded-lg object-cover shadow-xl shadow-black/25" />
             <div className="absolute -bottom-3 -right-3 h-20 w-20 border-b-2 border-r-2 border-gold/55" />
           </div>
           <div>
@@ -83,7 +83,7 @@ export default function About() {
       <section className="bg-navy px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-lg border border-gold/20 bg-navy-card/75 p-6 shadow-xl shadow-black/20">
-            <img src="/guitar-about.png" alt="Guitar representing Larry Bachman’s musical journey" className="h-full w-full object-contain" />
+            <img src="/guitar-about.webp" alt="Guitar representing Larry Bachman’s musical journey" width="600" height="399" loading="lazy" decoding="async" className="h-full w-full object-contain" />
           </div>
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Why Larry Writes</p>
@@ -121,7 +121,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-cover bg-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8" style={{ backgroundImage: "url('/road.png')" }}>
+      <section className="relative overflow-hidden bg-cover bg-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8" style={{ backgroundImage: "url('/road.webp')" }}>
         <div className="absolute inset-0 bg-[#251908]/85" />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">The Story Continues</p>

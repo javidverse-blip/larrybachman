@@ -174,7 +174,7 @@ export default function LifeAndStories() {
             {articles.filter((a) => a.featured).map((a) => (
               <div key={a.id} className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 transition-all duration-300 hover:-translate-y-0.5 flex flex-col rounded-lg overflow-hidden">
                 <div className="overflow-hidden">
-                  <img src={a.image} alt={a.title} className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={a.image} alt={a.title} loading="lazy" decoding="async" className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-3">
@@ -199,7 +199,7 @@ export default function LifeAndStories() {
               {articles.filter((a) => !a.featured).map((a) => (
                 <div key={a.id} className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 transition-all duration-300 hover:-translate-y-0.5 flex flex-col rounded-lg overflow-hidden">
                   <div className="overflow-hidden">
-                    <img src={a.image} alt={a.title} className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={a.image} alt={a.title} loading="lazy" decoding="async" className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <div className="flex items-center justify-between mb-2">
@@ -261,7 +261,7 @@ export default function LifeAndStories() {
               {ranchStories.map((story, i) => (
                 <div key={story.title} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   <div className={`relative ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <img src={story.image} alt={story.title} className="w-full h-72 object-cover shadow-lg" />
+                    <img src={story.image} alt={story.title} loading="lazy" decoding="async" className="w-full h-72 object-cover shadow-lg" />
                     <div className="absolute -bottom-3 -right-3 w-20 h-20 border-2 border-gold hidden md:block" />
                   </div>
                   <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
@@ -304,6 +304,8 @@ export default function LifeAndStories() {
                 <img
                   src={img.thumb}
                   alt={img.caption}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/60 transition-all duration-300 flex items-end p-4">
@@ -335,7 +337,7 @@ export default function LifeAndStories() {
             <ChevronRight size={36} />
           </button>
           <div className="max-w-4xl w-full mx-auto" onClick={(e) => e.stopPropagation()}>
-            <img src={galleryImages[lightbox].src} alt={galleryImages[lightbox].caption} className="w-full max-h-[80vh] object-contain" />
+            <img src={galleryImages[lightbox].src} alt={galleryImages[lightbox].caption} decoding="async" className="w-full max-h-[80vh] object-contain" />
             <div className="text-center mt-4">
               <span className="text-gold text-xs uppercase tracking-widest font-medium block mb-1">{galleryImages[lightbox].category}</span>
               <p className="text-warm-white font-serif text-lg">{galleryImages[lightbox].caption}</p>

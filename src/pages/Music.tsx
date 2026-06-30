@@ -19,7 +19,7 @@ export default function Music() {
     <div className="min-h-screen bg-navy">
       <section
         className="relative overflow-hidden border-b border-gold/10 bg-cover bg-center pb-16 pt-28 sm:pb-20 sm:pt-32"
-        style={{ backgroundImage: "url('/music-hero-bg.png')" }}
+        style={{ backgroundImage: "url('/music-hero-bg.webp')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
@@ -90,7 +90,7 @@ export default function Music() {
                 <Play size={17} /> The Promise
               </div>
             </div>
-            <img src="/The-Promise-Cover-Artwork.jpeg" alt="The Promise cover artwork" className="h-full min-h-[380px] w-full object-cover" />
+            <img src="/The-Promise-Cover-Artwork.webp" alt="The Promise cover artwork" width="1200" height="1200" loading="lazy" decoding="async" className="h-full min-h-[380px] w-full object-cover" />
           </article>
 
           <article className="mt-12 grid grid-cols-1 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20 lg:grid-cols-2">
@@ -101,11 +101,11 @@ export default function Music() {
               <p className="mb-5 leading-relaxed text-warm-white/70">Long before The Promise found its place in The Sparrows Nesting or inspired readers through The Lady and Jesse Make a Promise, it began in the quiet countryside of Pennsylvania. There, Larry spent countless hours studying the Bible with a close friend named Scott.</p>
               <p className="leading-relaxed text-warm-white/70">Before Larry left Pennsylvania for an opportunity in California, the two friends made a simple promise: if anything should happen to either of them, somehow, some way, they would let the other know.</p>
             </div>
-            <img src="/A-Phone-Call-That-Changed-Everything.png" alt="A Phone Call That Changed Everything" className="h-full min-h-[380px] w-full object-cover" />
+            <img src="/A-Phone-Call-That-Changed-Everything.webp" alt="A Phone Call That Changed Everything" width="1200" height="1200" loading="lazy" decoding="async" className="h-full min-h-[380px] w-full object-cover" />
           </article>
 
           <article className="mt-12 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20">
-            <img src="/When-Tomorrow Never-Came.png" alt="When Tomorrow Never Came" className="aspect-[16/5] w-full object-cover" />
+            <img src="/When-Tomorrow Never-Came.webp" alt="When Tomorrow Never Came" width="1440" height="960" loading="lazy" decoding="async" className="aspect-[16/5] w-full object-cover" />
             <div className="grid grid-cols-1 gap-10 p-7 sm:p-10 lg:grid-cols-2 lg:p-12">
               <div>
                 <h3 className="mb-5 font-serif text-3xl font-bold text-gold-light">When Tomorrow Never Came</h3>
@@ -137,7 +137,7 @@ export default function Music() {
               </a>
             </div>
             <div className="grid grid-rows-[auto_1fr] bg-gold/5">
-              <img src="/the sparrow nesting movie.jpg" alt="The Sparrows Nesting movie artwork" className="aspect-video w-full object-cover" />
+              <img src="/the sparrow nesting movie.webp" alt="The Sparrows Nesting movie artwork" width="1280" height="720" loading="lazy" decoding="async" className="aspect-video w-full object-cover" />
               <div className="p-7 sm:p-10 lg:p-12">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold">From Song to Screen</p>
                 <p className="leading-relaxed text-warm-white/70">Not long afterward, a producer working on the feature film The Sparrows Nesting needed music for the soundtrack. Larry submitted The Promise. The song remained in the film, where it was performed by Shana Saint and introduced to audiences worldwide.</p>

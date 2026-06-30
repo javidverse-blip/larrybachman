@@ -7,14 +7,14 @@ const featuredBooks = [
     subtitle: 'About the Book',
     description: 'Did you know that "Where Are You?" is the most significant question in the Bible? If God asked you that question, what would you say? You of course would say, "Here Am I". Also, he would be asking about our faith. I have to wonder truly, "Where Are We?" As Christians, where do we stand in our faith? When God asked Adam that question, God was also wondering where Adam was in his faith.',
     href: 'https://a.co/d/0cWx1ip0',
-    cover: '/whereareyou.png',
+    cover: '/whereareyou.webp',
   },
   {
     title: 'Where Are You Going?',
     subtitle: "It's About Choice",
     description: 'Larry Bachman\'s latest release! Welcome to the unveiling of Larry Bachman\'s highly anticipated latest release, "Where Are You Going? ... It\'s About Choice." Join Larry on his newest journey as he grapples with the challenges of adolescence, confronts peer pressure, and discovers the profound impact of his decisions. In this latest book, Larry\'s story continues to inspire readers of all ages, offering invaluable lessons in resilience, integrity, and the power of faith. Dive into the pages of "Where Are You Going? It\'s About Choice" and embark on an unforgettable adventure filled with heart, courage, and the enduring strength found in choosing the right path.',
     href: 'https://a.co/d/0bwgMITp',
-    cover: '/whereareyougoing.png',
+    cover: '/whereareyougoing.webp',
   },
 ];
 
@@ -73,8 +73,12 @@ export default function Home() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[560px] aspect-[4/3] rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20 shadow-2xl shadow-black/25">
                 <img
-                  src="/larry-office.png"
+                  src="/larry-office.webp"
                   alt="Larry Bachman in his office"
+                  width="1080"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -102,6 +106,8 @@ export default function Home() {
                   <img
                     src={book.cover}
                     alt={`${book.title} book cover`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -150,8 +156,12 @@ export default function Home() {
             <div className="[grid-area:tcImage]">
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-navy-card/60 border border-gold/20">
                 <img
-                  src="/tc-bradley-larry.png"
+                  src="/tc-bradley-larry.webp"
                   alt="TC Bradley with Larry Bachman"
+                  width="702"
+                  height="603"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

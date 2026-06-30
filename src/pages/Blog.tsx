@@ -5,7 +5,7 @@ export default function Blog() {
     <div className="min-h-screen bg-navy">
       <section
         className="relative overflow-hidden border-b border-gold/10 bg-cover bg-center pb-16 pt-28 sm:pb-20 sm:pt-32"
-        style={{ backgroundImage: "url('/blog-hero-bg.png')" }}
+        style={{ backgroundImage: "url('/blog-hero-bg.webp')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
