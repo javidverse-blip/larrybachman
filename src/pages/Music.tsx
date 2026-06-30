@@ -86,9 +86,14 @@ export default function Music() {
               <p className="mb-6 leading-relaxed text-warm-white/70">
                 Today, The Promise is recognized as one of Larry’s signature songs. Yet long before audiences heard its powerful lyrics, the song began with a simple phone call from a hurting friend. Before you read the story, take a few minutes to listen to “The Promise.” The words will take on even deeper meaning once you know the remarkable journey that inspired them.
               </p>
-              <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-gold">
+              <a
+                href="https://youtu.be/9bLcky2KZYQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-gold transition-colors hover:text-gold-light"
+              >
                 <Play size={17} /> The Promise
-              </div>
+              </a>
             </div>
             <img src="/The-Promise-Cover-Artwork.webp" alt="The Promise cover artwork" width="1200" height="1200" loading="lazy" decoding="async" className="h-full min-h-[380px] w-full object-cover" />
           </article>
