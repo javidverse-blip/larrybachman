@@ -167,11 +167,7 @@ export default function Books() {
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-gold">Published Works</p>
           <h1 className="mb-6 font-serif text-4xl font-bold text-warm-white sm:text-6xl">Books</h1>
           <p className="mx-auto max-w-3xl text-base leading-relaxed text-warm-white/75 sm:text-lg">
-            Every story has a beginning.<br />
-            Every life has another chapter.<br />
-            Whether through fiction, devotionals, or stories of redemption,<br className="hidden sm:block" />
-            Larry B. Bachman’s books remind us that no matter where life has taken us...<br />
-            <span className="font-semibold text-gold-light">Your Story Isn’t Over.</span>
+Every story has a beginning. Every life has another chapter. Whether through fiction, devotionals, or stories of redemption, Larry B. Bachman's books remind us that no matter where life has taken us, <span className="font-semibold text-gold-light">your story isn't over.</span>
           </p>
         </div>
       </section>

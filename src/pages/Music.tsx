@@ -1,15 +1,11 @@
 import { Music2, Play } from 'lucide-react';
-import PhotoPlaceholder from '../components/PhotoPlaceholder';
 import VideoPlaceholder from '../components/VideoPlaceholder';
 
 const songs = [
   {
     title: 'The Gift',
     description: '“The Gift” is a gospel melody celebrating the profound generosity of God. Inspired by His grace, the song reveals the greatest gift ever given—His love, redemption, and eternal blessings. Through heartfelt lyrics and uplifting harmonies, listeners are invited to reflect on the boundless love and grace found in Jesus Christ.',
-  },
-  {
-    title: 'Where Are You?',
-    description: '“Where Are You?” invites listeners to reflect on one of life’s timeless questions. Through its message of faith and purpose, the song encourages spiritual reflection and a deeper connection with God.',
+    embedUrl: 'https://www.youtube.com/embed/ZOo5J7OfrlA',
   },
   {
     title: 'The Promise',
@@ -21,12 +17,16 @@ const songs = [
 export default function Music() {
   return (
     <div className="min-h-screen bg-navy">
-      <section className="relative overflow-hidden border-b border-gold/20 bg-gradient-to-br from-navy via-navy-light to-navy px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-36 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.16),transparent_62%)]" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold">Songs of Faith and Promise</p>
-          <h1 className="mb-6 font-serif text-5xl font-bold text-warm-white sm:text-6xl">Music</h1>
-          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-warm-white/70">
+      <section
+        className="relative overflow-hidden border-b border-gold/10 bg-cover bg-center pb-16 pt-28 sm:pb-20 sm:pt-32"
+        style={{ backgroundImage: "url('/music-hero-bg.png')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-gold">Songs of Faith and Promise</p>
+          <h1 className="mb-6 font-serif text-4xl font-bold text-warm-white sm:text-6xl">Music</h1>
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-warm-white/70 sm:text-lg">
             Music has always been an important part of Larry B. Bachman’s journey. Through every lyric and melody, his songs reflect faith, hope, and the promises of God. Each composition shares a message of encouragement, inviting listeners to experience God’s love, grace, and faithfulness.
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function Music() {
                 <Play size={17} /> The Promise
               </div>
             </div>
-            <PhotoPlaceholder label="The Promise Cover Artwork" aspect="aspect-square" className="h-full min-h-[380px] w-full rounded-none border-0 bg-gold/10" />
+            <img src="/The-Promise-Cover-Artwork.jpeg" alt="The Promise cover artwork" className="h-full min-h-[380px] w-full object-cover" />
           </article>
 
           <article className="mt-12 grid grid-cols-1 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20 lg:grid-cols-2">
@@ -101,11 +101,11 @@ export default function Music() {
               <p className="mb-5 leading-relaxed text-warm-white/70">Long before The Promise found its place in The Sparrows Nesting or inspired readers through The Lady and Jesse Make a Promise, it began in the quiet countryside of Pennsylvania. There, Larry spent countless hours studying the Bible with a close friend named Scott.</p>
               <p className="leading-relaxed text-warm-white/70">Before Larry left Pennsylvania for an opportunity in California, the two friends made a simple promise: if anything should happen to either of them, somehow, some way, they would let the other know.</p>
             </div>
-            <PhotoPlaceholder label="A Phone Call That Changed Everything" aspect="aspect-square" className="h-full min-h-[380px] w-full rounded-none border-0 bg-gold/10" />
+            <img src="/A-Phone-Call-That-Changed-Everything.png" alt="A Phone Call That Changed Everything" className="h-full min-h-[380px] w-full object-cover" />
           </article>
 
           <article className="mt-12 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20">
-            <PhotoPlaceholder label="When Tomorrow Never Came" aspect="aspect-[16/5]" className="w-full rounded-none border-0 bg-gold/10" />
+            <img src="/When-Tomorrow Never-Came.png" alt="When Tomorrow Never Came" className="aspect-[16/5] w-full object-cover" />
             <div className="grid grid-cols-1 gap-10 p-7 sm:p-10 lg:grid-cols-2 lg:p-12">
               <div>
                 <h3 className="mb-5 font-serif text-3xl font-bold text-gold-light">When Tomorrow Never Came</h3>
@@ -123,13 +123,21 @@ export default function Music() {
           </article>
 
           <article className="mt-12 grid grid-cols-1 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20 lg:grid-cols-2">
-            <div className="p-7 sm:p-10 lg:p-12">
+            <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
               <h3 className="mb-5 font-serif text-3xl font-bold text-gold-light">When God Rewrote the Song</h3>
               <p className="mb-5 leading-relaxed text-warm-white/70">Years later, while helping his son produce an album, Larry experienced another moment he believes was directed by God. As he reflected on the unfinished song If You Need a Friend, he sensed a clear impression on his heart: rewrite it. Turn it into a praise song.</p>
               <p className="leading-relaxed text-warm-white/70">Within minutes, the message born out of grief became a testimony of faith. If You Need a Friend became The Promise—a song for anyone searching for hope, peace, and the assurance that God’s promises never fail.</p>
+              <a
+                href="https://youtu.be/JLAtiC_S5Zc?si=XsdexwC9phdp_59I"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center justify-center gap-2 self-start rounded-sm bg-gold px-6 py-3 font-semibold text-navy transition-colors hover:bg-gold-light"
+              >
+                <Play size={17} /> Watch on YouTube
+              </a>
             </div>
             <div className="grid grid-rows-[auto_1fr] bg-gold/5">
-              <PhotoPlaceholder label="The Sparrows Nesting Movie Artwork" aspect="aspect-video" className="w-full rounded-none border-0 bg-gold/10" />
+              <img src="/the sparrow nesting movie.jpg" alt="The Sparrows Nesting movie artwork" className="aspect-video w-full object-cover" />
               <div className="p-7 sm:p-10 lg:p-12">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold">From Song to Screen</p>
                 <p className="leading-relaxed text-warm-white/70">Not long afterward, a producer working on the feature film The Sparrows Nesting needed music for the soundtrack. Larry submitted The Promise. The song remained in the film, where it was performed by Shana Saint and introduced to audiences worldwide.</p>

@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Heart, Mail } from 'lucide-react';
+import { BookOpen, Facebook, Heart, Mail, Youtube } from 'lucide-react';
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'About Larry' },
+  { to: '/about', label: 'About' },
   { to: '/books', label: 'Books' },
+  { to: '/music', label: 'Music' },
   { to: '/media', label: 'Media' },
-  { to: '/devotionals', label: 'Devotionals' },
+  { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -32,6 +33,26 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-warm-white/40">
               Born in Pennsylvania. Shaped by faith, music, and the open land. Sharing stories that matter.
             </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="https://www.youtube.com/@Larrybbachman"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Larry B. Bachman on YouTube"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/25 text-warm-white/40 transition-colors hover:border-gold/50 hover:bg-gold/10 hover:text-gold"
+              >
+                <Youtube size={18} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100064048332341"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Larry B. Bachman on Facebook"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/25 text-warm-white/40 transition-colors hover:border-gold/50 hover:bg-gold/10 hover:text-gold"
+              >
+                <Facebook size={18} />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -68,7 +89,13 @@ export default function Footer() {
 
         <div className="border-t border-gold/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-warm-white/25">&copy; {new Date().getFullYear()} Larry Bachman. All rights reserved.</p>
-          <p className="text-xs text-warm-white/25">Designed by JavidVerse - For All Creative Solutions</p>
+          <div className="text-center sm:text-right">
+            <p className="text-xs text-warm-white/25">Designed by JavidVerse – For All Creative Solutions</p>
+            <p className="text-xs text-warm-white/25">
+              Email us at:{' '}
+              <a href="mailto:javidverse@gmail.com" className="transition-colors hover:text-gold">javidverse@gmail.com</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

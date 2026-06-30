@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Facebook, Menu, X, Youtube } from 'lucide-react';
 
 const links = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/books', label: 'Books' },
   { to: '/music', label: 'Music' },
-  { to: '/media-gallery', label: 'Media Gallery' },
+  { to: '/media', label: 'Media' },
   { to: '/blog', label: 'Blog' },
 ];
 
@@ -73,6 +73,26 @@ export default function Navbar() {
             >
               Contact
             </Link>
+            <div className="ml-2 flex items-center gap-1">
+              <a
+                href="https://www.youtube.com/@Larrybbachman"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Larry B. Bachman on YouTube"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/25 text-warm-white/60 transition-colors hover:border-gold/50 hover:bg-gold/10 hover:text-gold"
+              >
+                <Youtube size={18} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100064048332341"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Larry B. Bachman on Facebook"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/25 text-warm-white/60 transition-colors hover:border-gold/50 hover:bg-gold/10 hover:text-gold"
+              >
+                <Facebook size={18} />
+              </a>
+            </div>
           </nav>
 
           <button
@@ -107,6 +127,26 @@ export default function Navbar() {
             >
               Contact
             </Link>
+            <div className="mt-3 flex items-center justify-center gap-3">
+              <a
+                href="https://www.youtube.com/@Larrybbachman"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Larry B. Bachman on YouTube"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 text-warm-white/60 transition-colors hover:bg-gold/10 hover:text-gold"
+              >
+                <Youtube size={20} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100064048332341"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Larry B. Bachman on Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 text-warm-white/60 transition-colors hover:bg-gold/10 hover:text-gold"
+              >
+                <Facebook size={20} />
+              </a>
+            </div>
           </nav>
         </div>
       )}
