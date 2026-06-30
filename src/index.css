@@ -84,7 +84,7 @@
 @media (min-width: 1025px) {
   .home-hero__copy {
     /* Keep the copy locked instead of recalculating its position during zoom. */
-    padding-left: 140px;
+    left: 140px;
   }
 }
 
