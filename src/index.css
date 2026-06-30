@@ -74,6 +74,7 @@
 }
 
 .home-hero__copy {
+  position: relative;
   z-index: 2;
   min-width: 0;
   align-self: start;
