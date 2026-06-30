@@ -49,6 +49,7 @@
  */
 .home-hero {
   position: relative;
+  height: 990px;
   overflow: hidden;
   background: #251908;
 }
@@ -64,34 +65,23 @@
 .home-hero__inner {
   position: relative;
   z-index: 10;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
-  gap: clamp(24px, 4vw, 72px);
-  width: min(100% - 4rem, 1800px);
-  min-height: clamp(650px, 47vw, 760px);
+  width: 1800px;
+  height: 760px;
   margin: 0 auto;
-  padding-top: clamp(100px, 6vw, 116px);
 }
 
 .home-hero__copy {
-  position: relative;
+  position: absolute;
+  top: 166px;
+  left: 140px;
   z-index: 2;
-  min-width: 0;
-  align-self: start;
-  padding-top: clamp(50px, 1vw, 18px);
-}
-
-@media (min-width: 1025px) {
-  .home-hero__copy {
-    /* Keep the copy locked instead of recalculating its position during zoom. */
-    left: 140px;
-  }
+  width: 850px;
 }
 
 .home-hero__copy h1 {
   margin: 0 0 28px;
   color: #fff;
-  font-size: clamp(3.25rem, 6vw, 6.8rem);
+  font-size: 108.8px;
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.045em;
@@ -102,7 +92,7 @@
 }
 
 .home-hero__copy p {
-  max-width: 680px;
+  width: 760px;
   margin-bottom: 30px;
   color: rgba(213, 211, 206, 0.88);
   font-size: 20px;
@@ -110,29 +100,32 @@
 }
 
 .home-hero__portrait {
-  display: flex;
-  min-width: 0;
-  height: 100%;
-  padding-top: 0;
-  align-items: flex-end;
-  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 795px;
+  height: 760px;
   line-height: 0;
 }
 
 .home-hero__portrait img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   display: block;
-  width: min(100%, 830px);
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  width: 760px;
+  height: 760px;
   object-fit: contain;
   object-position: bottom center;
 }
 
 .home-hero__book-shelf {
-  position: relative;
+  position: absolute;
+  top: 760px;
+  right: 0;
+  left: 0;
   z-index: 20;
-  height: clamp(180px, 13vw, 230px);
+  height: 230px;
   overflow: visible;
   background: linear-gradient(100deg, #b28f3e 0%, #9f712c 100%);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.13);
@@ -140,62 +133,87 @@
 
 .home-hero__books {
   position: relative;
-  width: min(100% - 4rem, 1800px);
-  height: 100%;
+  width: 1800px;
+  height: 230px;
   margin: 0 auto;
 }
 
 .home-hero__all-books {
   position: absolute;
-  top: 50%;
-  left: 27.5%;
+  top: -268px;
+  left: 0;
   display: block;
-  width: min(55%, 1000px);
+  width: 990px;
   height: auto;
-  max-width: 100%;
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(10px 14px 10px rgba(37, 25, 8, 0.42));
-  transform: translate(-50%, -68%);
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .home-hero {
+    height: 815px;
+  }
   .home-hero__inner {
-    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 1.05fr);
-    gap: clamp(18px, 3vw, 32px);
-    width: min(100% - 2.5rem, 960px);
-    min-height: clamp(460px, 58.6vw, 600px);
-    padding-top: 90px;
+    width: 960px;
+    height: 600px;
+  }
+  .home-hero__copy {
+    top: 140px;
+    left: 0;
+    width: 441px;
   }
   .home-hero__copy h1 {
-    font-size: clamp(3rem, 6vw, 3.85rem);
+    font-size: 61.6px;
   }
   .home-hero__copy p {
+    width: 441px;
     font-size: 18px;
   }
+  .home-hero__portrait {
+    width: 487px;
+    height: 510px;
+  }
   .home-hero__portrait img {
-    width: min(100%, 620px);
+    width: 487px;
+    height: 487px;
+  }
+  .home-hero__book-shelf {
+    top: 600px;
+    height: 215px;
+  }
+  .home-hero__books {
+    width: 960px;
+    height: 215px;
+  }
+  .home-hero__all-books {
+    top: -61px;
+    left: 180px;
+    width: 600px;
   }
 }
 
 @media (max-width: 767px) {
+  .home-hero {
+    height: 990px;
+  }
   .home-hero__inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-    width: min(100% - 2rem, 560px);
-    min-height: 0;
-    padding-top: 102px;
+    width: 560px;
+    height: 775px;
   }
   .home-hero__copy {
-    padding-top: 0;
+    top: 102px;
+    left: 16px;
+    width: 528px;
     text-align: center;
   }
   .home-hero__copy h1 {
     margin-bottom: 22px;
-    font-size: clamp(2.65rem, 12vw, 4rem);
+    font-size: 64px;
     line-height: 1.12;
   }
   .home-hero__copy p {
+    width: 528px;
     margin-right: auto;
     margin-bottom: 24px;
     margin-left: auto;
@@ -206,25 +224,72 @@
     margin: 0 auto;
   }
   .home-hero__portrait {
-    height: auto;
-    margin-top: 4px;
-    padding-top: 0;
+    top: 400px;
+    right: 30px;
+    bottom: auto;
+    width: 500px;
+    height: 375px;
   }
   .home-hero__portrait img {
-    width: min(92vw, 500px);
-    max-height: none;
+    width: 500px;
+    height: 500px;
   }
   .home-hero__book-shelf {
-    height: clamp(170px, 50vw, 215px);
+    top: 775px;
+    height: 215px;
     overflow: hidden;
   }
   .home-hero__books {
-    width: 100%;
+    width: 560px;
+    height: 215px;
   }
   .home-hero__all-books {
-    left: 50%;
-    width: min(108%, 600px);
-    transform: translate(-50%, -50%);
+    top: -61px;
+    left: -20px;
+    width: 600px;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-hero {
+    height: 960px;
+  }
+  .home-hero__inner {
+    width: 390px;
+    height: 765px;
+  }
+  .home-hero__copy {
+    left: 16px;
+    width: 358px;
+  }
+  .home-hero__copy h1 {
+    font-size: 46.8px;
+  }
+  .home-hero__copy p {
+    width: 358px;
+  }
+  .home-hero__portrait {
+    top: 405px;
+    right: 16px;
+    width: 358px;
+    height: 360px;
+  }
+  .home-hero__portrait img {
+    width: 358px;
+    height: 358px;
+  }
+  .home-hero__book-shelf {
+    top: 765px;
+    height: 195px;
+  }
+  .home-hero__books {
+    width: 390px;
+    height: 195px;
+  }
+  .home-hero__all-books {
+    top: -21px;
+    left: -16px;
+    width: 422px;
   }
 }
 
