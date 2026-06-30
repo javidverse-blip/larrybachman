@@ -37,10 +37,10 @@
   }
 }
 
-/* Homepage hero: fixed, art-directed compositions for each breakpoint. */
+/* Homepage hero */
 .home-hero {
   position: relative;
-  height: 1120px;
+  min-height: 1120px;
   overflow: hidden;
   background: #251908;
 }
@@ -55,8 +55,8 @@
 
 .home-hero__shelf {
   position: absolute;
-  top: 890px;
   right: 0;
+  bottom: 0;
   left: 0;
   z-index: 1;
   height: 230px;
@@ -67,23 +67,27 @@
 .home-hero__stage {
   position: relative;
   z-index: 2;
-  width: 1600px;
-  height: 1120px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  align-items: end;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 1120px;
   margin: 0 auto;
+  padding: 160px 32px 230px;
 }
 
 .home-hero__copy {
-  position: absolute;
-  top: 105px;
-  left: 14px;
-  width: 850px;
+  position: relative;
+  z-index: 3;
+  align-self: start;
+  padding-top: 55px;
 }
 
 .home-hero__copy h1 {
-  width: 850px;
   margin: 0 0 28px;
   color: #fff;
-  font-size: 108.8px;
+  font-size: 96px;
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.045em;
@@ -94,7 +98,7 @@
 }
 
 .home-hero__copy p {
-  width: 800px;
+  max-width: 720px;
   margin-bottom: 30px;
   color: rgba(213, 211, 206, 0.88);
   font-size: 20px;
@@ -102,29 +106,31 @@
 }
 
 .home-hero__portrait {
-  position: absolute;
-  right: -80px;
-  bottom: 230px;
-  width: 720px;
-  height: 800px;
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  width: 100%;
   line-height: 0;
 }
 
 .home-hero__portrait img {
   display: block;
-  width: 720px;
-  height: 800px;
+  width: 100%;
+  max-width: 620px;
+  max-height: 760px;
+  margin-left: auto;
   object-fit: contain;
   object-position: bottom center;
 }
 
 .home-hero__books {
   position: absolute;
-  bottom: -2px;
-  left: -170px;
+  bottom: -8px;
+  left: 32px;
   z-index: 3;
   display: block;
-  width: 1050px;
+  width: 720px;
+  max-width: 58%;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(10px 14px 10px rgba(37, 25, 8, 0.42));
@@ -132,70 +138,65 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-hero {
-    height: 815px;
+    min-height: 900px;
   }
   .home-hero__shelf {
-    top: 600px;
-    height: 215px;
+    height: 200px;
   }
   .home-hero__stage {
-    width: 960px;
-    height: 815px;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+    min-height: 900px;
+    padding: 120px 24px 200px;
   }
   .home-hero__copy {
-    top: 140px;
-    left: 0;
-    width: 441px;
+    padding-top: 35px;
   }
   .home-hero__copy h1 {
-    font-size: 61.6px;
+    font-size: 60px;
   }
   .home-hero__copy p {
-    width: 441px;
     font-size: 18px;
   }
   .home-hero__portrait {
-    right: 0;
-    bottom: 215px;
-    width: 487px;
-    height: 510px;
+    width: 100%;
   }
   .home-hero__portrait img {
-    width: 487px;
-    height: 487px;
+    max-width: 520px;
+    max-height: 620px;
   }
   .home-hero__books {
-    bottom: -61px;
-    left: 180px;
-    width: 600px;
+    bottom: -10px;
+    left: 24px;
+    width: 560px;
+    max-width: 60%;
   }
 }
 
 @media (max-width: 767px) {
   .home-hero {
-    height: 990px;
+    min-height: 1100px;
   }
   .home-hero__shelf {
-    top: 775px;
-    height: 215px;
+    height: 190px;
   }
   .home-hero__stage {
-    width: 560px;
-    height: 990px;
+    display: flex;
+    min-height: 1100px;
+    flex-direction: column;
+    padding: 110px 16px 190px;
   }
   .home-hero__copy {
-    top: 102px;
-    left: 16px;
-    width: 528px;
+    width: 100%;
+    padding-top: 0;
     text-align: center;
   }
   .home-hero__copy h1 {
     margin-bottom: 22px;
-    font-size: 64px;
+    font-size: 58px;
     line-height: 1.12;
   }
   .home-hero__copy p {
-    width: 528px;
+    max-width: 560px;
     margin-right: auto;
     margin-bottom: 24px;
     margin-left: auto;
@@ -206,59 +207,53 @@
     margin: 0 auto;
   }
   .home-hero__portrait {
-    top: 400px;
-    right: 30px;
-    bottom: unset;
-    width: 500px;
-    height: 375px;
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
   }
   .home-hero__portrait img {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 520px;
+    margin: 0 auto;
   }
   .home-hero__books {
-    bottom: -61px;
-    left: -20px;
-    width: 600px;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    width: 520px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 479px) {
   .home-hero {
-    height: 960px;
+    min-height: 960px;
   }
   .home-hero__shelf {
-    top: 765px;
-    height: 195px;
+    height: 175px;
   }
   .home-hero__stage {
-    width: 390px;
-    height: 960px;
-  }
-  .home-hero__copy {
-    left: 16px;
-    width: 358px;
+    min-height: 960px;
+    padding: 102px 16px 175px;
   }
   .home-hero__copy h1 {
-    font-size: 46.8px;
-  }
-  .home-hero__copy p {
-    width: 358px;
+    font-size: 46px;
   }
   .home-hero__portrait {
-    top: 405px;
-    right: 16px;
-    width: 358px;
-    height: 360px;
+    margin-top: 12px;
   }
   .home-hero__portrait img {
-    width: 358px;
-    height: 358px;
+    max-width: 380px;
+    max-height: 390px;
   }
   .home-hero__books {
-    bottom: -21px;
-    left: -16px;
-    width: 422px;
+    bottom: -4px;
+    width: 430px;
   }
 }
 
