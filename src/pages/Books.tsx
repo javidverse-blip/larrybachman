@@ -1,182 +1,231 @@
-import { useState } from 'react';
-import { ArrowRight, Star, ExternalLink } from 'lucide-react';
-import PhotoPlaceholder from '../components/PhotoPlaceholder';
+import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const books = [
+type BookCategory = 'featured' | 'with-video' | 'other';
+
+type Book = {
+  title: string;
+  description: string;
+  image: string;
+  amazonUrl: string;
+  videoUrl?: string;
+  category: BookCategory;
+  featured: boolean;
+};
+
+const books: Book[] = [
+  {
+    title: 'Lady and Jesse',
+    description:
+      'A heartfelt story of love, faith, and commitment. Lady and Jesse Make a Promise follows a dream to build a Bible-based home for disadvantaged children, showing how trust, sacrifice, and hope can shape a life of purpose.',
+    image: '/6-lady-and-jesse-removebg-preview.png',
+    amazonUrl: 'https://a.co/d/04w5pDKN',
+    videoUrl: 'https://www.youtube.com/embed/_RlRGPx7rAA',
+    category: 'featured',
+    featured: true,
+  },
+  {
+    title: 'Tourniquet',
+    description:
+      'A faith-centered story about pain, healing, and redemption. Tourniquet points readers toward forgiveness, restoration, and God’s power to bring hope even through life’s deepest wounds.',
+    image: '/5-tourniquet-removebg-preview.png',
+    amazonUrl: 'https://a.co/d/0gqRW2th',
+    videoUrl: 'https://www.youtube.com/embed/_-gz2G9L4g8',
+    category: 'featured',
+    featured: true,
+  },
   {
     title: 'Where Are You?',
-    subtitle: 'Your Guide to a Faith Filled Journey',
-    description: 'Did you know that "Where Are You?" is the most significant question in the Bible? If God asked you that question, what would you say? When God asked Adam that question, He was also wondering where Adam was in his faith. This book invites you on a profound journey of self-examination and spiritual discovery.',
-    tag: 'Faith & Spirituality',
-    featured: true,
-    reviews: [
-      { author: 'Sarah M.', text: 'A powerful reminder to pause and examine where we truly are in our walk with God.' },
-    ],
+    description:
+      'A children’s faith-based book built around the question God asked Adam: “Where are you?” Through simple storytelling, it teaches children about faith, trust, obedience, and God’s loving call to His people.',
+    image: '/4-where-are-are_you-removebg-preview.png',
+    amazonUrl: 'https://a.co/d/00u8BRoM',
+    videoUrl: 'https://www.youtube.com/embed/g51oxxTjM-8',
+    category: 'with-video',
+    featured: false,
+  },
+  {
+    title: 'Where Are You? Spanish Edition',
+    description:
+      'The Spanish edition of Where Are You? introduces children and families to one of the Bible’s most meaningful questions. It encourages readers to reflect on faith, obedience, accountability, and where they stand with God.',
+    image: '/where-are-you-spanish.png',
+    // New Amazon URL matched to the Spanish cover; swap here if the listing order differs.
+    amazonUrl: 'https://a.co/d/0bTw3yAL',
+    category: 'with-video',
+    featured: false,
   },
   {
     title: 'Where Are You Going?',
-    subtitle: "It's About Choice",
-    description: "Larry's newest journey grapples with the challenges of adolescence, peer pressure, and the profound impact of decisions. This compelling narrative weaves together the experiences of young people navigating friendship, relationships, and choices grounded in biblical guidance.",
-    tag: 'Faith & Coming of Age',
-    featured: true,
-    reviews: [
-      { author: 'James T.', text: 'A must-read for anyone navigating life\'s crossroads. Larry\'s wisdom shines through.' },
-    ],
-  },
-  {
-    title: "Tourniquet: Visions From 'Tarin Row'",
-    subtitle: 'A Story of Heartache, Redemption & Faith',
-    description: "G.T.O. — George Taylor Owens — was a bright aspiring athlete with strong family ties and a spiritual upbringing. Life seemed to have no end for a young man filled with promise. But life has twists and turns, and the next breath is never guaranteed.",
-    tag: 'Fiction & Inspiration',
-    featured: true,
-    reviews: [
-      { author: 'Rebecca L.', text: 'Heartbreaking and hopeful in equal measure. A story that stays with you.' },
-    ],
-  },
-  {
-    title: 'Living a Prosperous Life',
-    subtitle: 'Walking in the Light of Grace',
-    description: "Centered on The Lord's Prayer stanzas and the great controversy between good and evil, this book helps readers learn about the history of Christianity and the hope found in Jesus — and how to live a prosperous, joy-filled life on earth.",
-    tag: 'Christian Living',
+    description:
+      'A faith-based story about Larry facing peer pressure, conflict, friendship, and difficult choices while learning more about God and the Bible. The book helps young readers understand choice, accountability, and biblical guidance.',
+    image: '/where-are-you-going.png',
+    // New Amazon URL matched to the Where Are You Going? cover; swap here if needed.
+    amazonUrl: 'https://a.co/d/0fUqg4gT',
+    videoUrl: 'https://www.youtube.com/embed/les4leIlBN8',
+    category: 'with-video',
     featured: false,
-    reviews: [],
+  },
+  {
+    title: 'Lady and the Carpenter',
+    description:
+      'Out of an unfortunate chain of events comes a renewed message of faith, family, and grace. This story reminds readers that God can restore what feels broken.',
+    image: '/1-lady-and-carpenter-removebg-preview.png',
+    amazonUrl: 'https://a.co/d/0akINls7',
+    category: 'other',
+    featured: false,
   },
   {
     title: 'Reuben versus Meyer',
-    subtitle: 'Real-Life Lessons',
-    description: "As life spins around us we can never know what lay just around the bend. We plan, we predict, we live in the here and now. Suddenly everything changes. Read these real-life lessons. Place yourself into the story. Where would you stand?",
-    tag: 'Life & Wisdom',
+    description:
+      'A story of choices, consequences, and spiritual lessons. Reuben versus Meyer invites readers to reflect on character, responsibility, and where they stand when life takes an unexpected turn.',
+    image: '/2-reuben-versus-meyer-removebg-preview.png',
+    amazonUrl: 'https://a.co/d/0bpVYBWx',
+    category: 'other',
     featured: false,
-    reviews: [],
   },
   {
-    title: 'Lady and Jesse Make a Promise',
-    subtitle: 'Love, Faith, Lost and Found',
-    description: "A heartfelt story of love, faith, and redemption. It follows Lady, a spirited young musician, and Jesse, a boy scarred by family struggles, as their unlikely friendship blossoms under an old oak tree. Through shared dreams they discover hope, forgiveness, and grace.",
-    tag: 'Inspirational Fiction',
+    title: 'Living a Prosperous Life',
+    description:
+      'Living a Prosperous Life explores the battle between good and evil, the hope found in Jesus, and the possibility of living with joy, purpose, and spiritual prosperity.',
+    image: '/3-living-prosp-life-removebg-preview.png',
+    amazonUrl: 'https://a.co/d/0iDQEZ8g',
+    category: 'other',
     featured: false,
-    reviews: [],
-  },
-  {
-    title: '¿Dónde estás?',
-    subtitle: 'Edición en Español',
-    description: 'The Spanish-language edition of "Where Are You?" — bringing the message of faith to a wider audience.',
-    tag: 'Faith & Spirituality',
-    featured: false,
-    reviews: [],
   },
 ];
 
-export default function Books() {
-  const [expandedBook, setExpandedBook] = useState<string | null>(null);
-  const featured = books.filter((b) => b.featured);
-  const rest = books.filter((b) => !b.featured);
+function AmazonButton({ book }: { book: Book }) {
+  return (
+    <a
+      href={book.amazonUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-5 py-3 text-base font-semibold text-navy transition-colors duration-300 hover:bg-gold-light"
+    >
+      Get a Copy <ExternalLink size={16} />
+    </a>
+  );
+}
+
+function VideoEmbed({ book }: { book: Book }) {
+  if (!book.videoUrl) return null;
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-gradient-to-br from-navy via-navy-light to-navy border-b border-gold/10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,168,67,0.08),transparent_60%)]" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Published Works</p>
-          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-warm-white mb-6">Books</h1>
-          <p className="text-warm-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Stories of faith, choice, redemption, and the quiet grace woven through everyday life.
-          </p>
-        </div>
-      </section>
-
-      {/* Proceeds Banner */}
-      <div className="bg-gold text-navy py-3 px-4 text-center">
-        <p className="text-sm font-medium">All proceeds from Larry's books go directly to ministry and service.</p>
+    <div className="mt-6 border-t border-gold/15 pt-6">
+      <div className="aspect-video overflow-hidden rounded-lg border border-gold/20 bg-[#120c04] shadow-inner">
+        <iframe
+          className="h-full w-full"
+          src={book.videoUrl}
+          title={`${book.title} video`}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
       </div>
+    </div>
+  );
+}
 
-      {/* Featured Books */}
-      <section className="section-padding bg-gold">
-        <div className="container-wide">
-          <p className="text-navy/70 font-medium tracking-[0.2em] uppercase text-xs mb-2">Featured Releases</p>
-          <h2 className="text-3xl font-serif font-bold text-navy mb-10">Latest &amp; Most Popular</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 sm:mb-20">
-            {featured.map((book) => (
-              <div key={book.title} className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1">
-                <div className="aspect-[3/4] overflow-hidden bg-navy-card/60">
-                  <PhotoPlaceholder label={`${book.title} Book Cover`} aspect="aspect-[3/4]" className="w-full h-full rounded-none border-0" />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <span className="inline-block text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-sm mb-3 self-start">
-                    {book.tag}
-                  </span>
-                  <h3 className="font-serif font-bold text-warm-white text-lg mb-1 leading-snug">{book.title}</h3>
-                  <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
-                  <p className="text-warm-white/60 text-sm leading-relaxed flex-1">{book.description}</p>
-                  {book.reviews.length > 0 && (
-                    <div className="mt-4 pt-4 border-t border-gold/10">
-                      <div className="flex items-center gap-1 mb-1">
-                        <Star size={12} className="text-gold" />
-                        <p className="text-warm-white/50 text-xs italic">"{book.reviews[0].text}"</p>
-                      </div>
-                      <p className="text-warm-white/30 text-xs">— {book.reviews[0].author}</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+function BookCard({ book, featured = false }: { book: Book; featured?: boolean }) {
+  return (
+    <article className="group flex h-full flex-col rounded-xl border border-gold/25 bg-navy-card/55 p-5 shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 sm:p-6">
+      <div className={featured ? 'grid gap-6 sm:grid-cols-[180px_1fr]' : ''}>
+        <div className={`${featured ? 'h-[270px]' : 'h-[320px]'} flex items-center justify-center rounded-lg bg-[#1b1207] p-5`}>
+          <img
+            src={book.image}
+            alt={`${book.title} book cover`}
+            className="h-full w-full object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.35)] transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
+        <div className={`flex flex-col ${featured ? '' : 'pt-5'}`}>
+          {featured && <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Featured Book</p>}
+          <h3 className="mb-3 font-serif text-2xl font-bold leading-snug text-warm-white">{book.title}</h3>
+          <p className="mb-6 flex-1 text-base leading-relaxed text-warm-white/70">{book.description}</p>
+          <div className="self-start"><AmazonButton book={book} /></div>
+        </div>
+      </div>
+      <VideoEmbed book={book} />
+    </article>
+  );
+}
 
-          {/* More Books */}
-          <div className="border-t border-navy/20 pt-16">
-            <p className="text-navy/70 font-medium tracking-[0.2em] uppercase text-xs mb-2">More Titles</p>
-            <h2 className="text-3xl font-serif font-bold text-navy mb-10">Complete Collection</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {rest.map((book) => (
-                <div
-                  key={book.title}
-                  className="group bg-navy-card/60 border border-gold/20 hover:border-gold/40 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-1 cursor-pointer"
-                  onClick={() => setExpandedBook(expandedBook === book.title ? null : book.title)}
-                >
-                  <div className="aspect-[3/4] overflow-hidden bg-navy-card/60">
-                    <PhotoPlaceholder label={`${book.title} Book Cover`} aspect="aspect-[3/4]" className="w-full h-full rounded-none border-0" />
-                  </div>
-                  <div className="p-5">
-                    <span className="inline-block text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-sm mb-3">
-                      {book.tag}
-                    </span>
-                    <h3 className="font-serif font-bold text-warm-white text-base mb-1 leading-snug">{book.title}</h3>
-                    <p className="text-gold text-xs font-medium uppercase tracking-wide mb-3">{book.subtitle}</p>
-                    <p className={`text-warm-white/60 text-sm leading-relaxed transition-all ${expandedBook === book.title ? '' : 'line-clamp-3'}`}>
-                      {book.description}
-                    </p>
-                    <div className="mt-4 pt-4 border-t border-gold/10">
-                      <span className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-sm font-medium transition-colors">
-                        {expandedBook === book.title ? 'Show Less' : 'Learn More'} <ArrowRight size={13} />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+export default function Books() {
+  const featuredBooks = books.filter((book) => book.featured);
+  const videoBooks = books.filter((book) => book.category === 'with-video');
+  const otherBooks = books.filter((book) => book.category === 'other');
+
+  return (
+    <div className="min-h-screen bg-navy">
+      <section
+        className="relative overflow-hidden border-b border-gold/10 bg-cover bg-center pb-16 pt-28 sm:pb-20 sm:pt-32"
+        style={{ backgroundImage: "url('/books-bg.png')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-[#251908]/95 via-[#251908]/82 to-[#251908]/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(178,143,62,0.14),transparent_60%)]" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-gold">Published Works</p>
+          <h1 className="mb-6 font-serif text-4xl font-bold text-warm-white sm:text-6xl">Books</h1>
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-warm-white/75 sm:text-lg">
+            Every story has a beginning.<br />
+            Every life has another chapter.<br />
+            Whether through fiction, devotionals, or stories of redemption,<br className="hidden sm:block" />
+            Larry B. Bachman’s books remind us that no matter where life has taken us...<br />
+            <span className="font-semibold text-gold-light">Your Story Isn’t Over.</span>
+          </p>
         </div>
       </section>
 
-      {/* Music Section */}
-      <section className="section-padding bg-navy-light border-y border-gold/10">
-        <div className="container-wide text-center">
-          <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Beyond the Page</p>
-          <h2 className="text-3xl font-serif font-bold text-warm-white mb-4">Gospel Music by Larry</h2>
-          <p className="text-warm-white/60 leading-relaxed max-w-2xl mx-auto mb-8">
-            Alongside his books, Larry has written and released gospel music including "The Gift" and "The Promise." "The Promise" was featured in the film <em>Sparrows Nesting</em>, premiered at Hollywood's Grauman's Theatre.
-          </p>
-          <a
-            href="https://www.youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-          >
-            Listen on YouTube <ExternalLink size={14} />
-          </a>
+      <BookSection eyebrow="Selected Works" title="Featured Books" className="bg-navy">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {featuredBooks.map((book) => <BookCard key={book.title} book={book} featured />)}
+        </div>
+      </BookSection>
+
+      <BookSection eyebrow="Watch & Read" title="Where Are You Series" className="border-y border-navy/15 bg-gold" light>
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-3">
+          {videoBooks.map((book) => <BookCard key={book.title} book={book} />)}
+        </div>
+      </BookSection>
+
+      <BookSection eyebrow="The Collection" title="Other Books" className="bg-navy">
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {otherBooks.map((book) => <BookCard key={book.title} book={book} />)}
+        </div>
+      </BookSection>
+
+      <section className="border-y border-navy/15 bg-gold px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+          <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-xl border border-gold/25 bg-navy-card/50 shadow-xl shadow-black/25">
+            <img src="/larry-office.png" alt="Larry B. Bachman" className="h-full w-full object-cover" />
+          </div>
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Behind the Stories</p>
+            <h2 className="mb-6 font-serif text-3xl font-bold text-navy sm:text-4xl">Meet the Author</h2>
+            <div className="space-y-4 leading-relaxed text-navy/75">
+              <p>Larry B. Bachman is an author whose stories are shaped by a lifetime of faith, creativity, and real-life experiences. From children&apos;s books and inspiring novels to faith-based devotionals and Christian fiction, his writing encourages readers to discover hope, purpose, and the enduring promises of God.</p>
+              <p>Drawing from experiences in music, publishing, filmmaking, and ministry, Larry creates stories that entertain, inspire, and point readers toward timeless biblical truths. Whether writing for children or adults, his desire is to remind every reader that no matter where life leads, God is never finished writing their story.</p>
+            </div>
+            <Link to="/about" className="mt-7 inline-flex items-center gap-2 font-semibold text-navy transition-colors hover:text-[#6b451b]">
+              Read Larry&apos;s Story <ArrowRight size={17} />
+            </Link>
+          </div>
         </div>
       </section>
     </div>
+  );
+}
+
+function BookSection({ eyebrow, title, className, children, light = false }: { eyebrow: string; title: string; className: string; children: React.ReactNode; light?: boolean }) {
+  return (
+    <section className={`${className} px-4 py-16 sm:px-6 sm:py-20 lg:px-8`}>
+      <div className="container-wide">
+        <div className="mb-10 text-center">
+          <p className={`mb-3 text-xs font-semibold uppercase tracking-[0.22em] ${light ? 'text-navy/65' : 'text-gold'}`}>{eyebrow}</p>
+          <h2 className={`font-serif text-3xl font-bold sm:text-4xl ${light ? 'text-navy' : 'text-warm-white'}`}>{title}</h2>
+        </div>
+        {children}
+      </div>
+    </section>
   );
 }

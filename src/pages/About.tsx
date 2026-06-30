@@ -5,7 +5,7 @@ const journeyMoments = [
   { icon: ShieldCheck, title: 'Doors that closed.' },
   { icon: RefreshCw, title: 'Dreams that changed.' },
   { icon: Clock, title: 'Seasons of waiting.' },
-  { icon: Sparkles, title: 'Moments that looked like endings…', desc: '…only to become new beginnings through God’s faithfulness.' },
+  { icon: Sparkles, title: 'Moments of endings' },
 ];
 
 const values = [
@@ -42,7 +42,7 @@ export default function About() {
           </div>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Meet Larry</p>
-            <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Author. Speaker. Storyteller.</h2>
+            <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Author | Speaker</h2>
             <div className="space-y-4 leading-relaxed text-warm-white/70">
               <p>Some people write stories.</p>
               <p className="font-serif text-xl font-semibold text-gold-light">Larry B. Bachman has lived them.</p>
@@ -67,24 +67,24 @@ export default function About() {
               <p>They were discovered in unexpected places:</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {journeyMoments.map(({ icon: Icon, title, desc }) => (
-              <article key={title} className="group rounded-lg border border-navy/20 bg-navy-card/90 p-5 shadow-md shadow-navy/10 transition-all duration-300 hover:-translate-y-1 hover:border-warm-white/30 hover:shadow-lg">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/35 bg-gold/10">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {journeyMoments.map(({ icon: Icon, title }) => (
+              <article key={title} className="group rounded-lg border border-navy/20 bg-navy-card/90 p-4 shadow-md shadow-navy/10 transition-all duration-300 hover:-translate-y-1 hover:border-warm-white/30 hover:shadow-lg">
+                <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gold/35 bg-gold/10">
                   <Icon size={18} className="text-gold" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-warm-white">{title}</h3>
-                {desc && <p className="mt-3 text-sm leading-relaxed text-warm-white/65">{desc}</p>}
+                <h3 className="font-serif text-lg font-bold text-warm-white">{title}</h3>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-navy px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="absolute inset-y-0 right-0 hidden w-1/2 opacity-20 lg:block" style={{ backgroundImage: "url('/guitar-about.jpeg')", backgroundPosition: 'center', backgroundSize: 'cover' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/60" />
-        <div className="container-wide relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+      <section className="bg-navy px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+          <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-lg border border-gold/20 bg-navy-card/75 p-6 shadow-xl shadow-black/20">
+            <img src="/guitar-about.png" alt="Guitar representing Larry Bachman’s musical journey" className="h-full w-full object-contain" />
+          </div>
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Why Larry Writes</p>
             <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Stories That Point Beyond Themselves</h2>
@@ -94,11 +94,10 @@ export default function About() {
               <p>Whether through children&apos;s books, novels, devotionals, songs, or films, every project is created with one purpose:</p>
               <p className="font-semibold text-warm-white">To point readers toward timeless biblical truth and the hope found in Jesus Christ.</p>
             </div>
-            <blockquote className="mt-7 rounded-lg border border-gold/25 bg-navy-card/75 p-6 font-serif text-lg italic leading-relaxed text-warm-white shadow-lg">
+            <blockquote className="mt-7 rounded-lg border border-gold/25 bg-navy-card/75 p-6 font-serif text-lg italic leading-relaxed text-warm-white shadow-lg [font-variant:small-caps]">
               “Every story is an opportunity to remind someone that God&apos;s grace is still writing beautiful endings.”
             </blockquote>
           </div>
-          <img src="/guitar-about.jpeg" alt="Guitar representing Larry Bachman’s musical journey" className="w-full rounded-lg border border-gold/20 object-cover shadow-xl lg:hidden" />
         </div>
       </section>
 

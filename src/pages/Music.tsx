@@ -32,11 +32,11 @@ export default function Music() {
         </div>
       </section>
 
-      <section className="section-padding bg-navy border-b border-gold/20">
+      <section className="section-padding border-b border-navy/15 bg-gold">
         <div className="container-wide">
           <div className="mb-12 max-w-2xl">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Listen</p>
-            <h2 className="font-serif text-4xl font-bold text-warm-white">Featured Songs</h2>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Listen</p>
+            <h2 className="font-serif text-4xl font-bold text-navy">Featured Songs</h2>
           </div>
           <div className="space-y-10">
             {songs.map((song, index) => (
