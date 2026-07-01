@@ -56,7 +56,7 @@ export default function Contact() {
             <div className="lg:col-span-2 bg-[#251908] border border-navy/20 rounded-lg p-6 sm:p-8">
               <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Get in Touch</p>
               <h2 className="text-3xl font-serif font-bold text-warm-white mb-6">Let's Connect</h2>
-              <p className="text-warm-white/60 leading-relaxed mb-8">
+              <p className="text-[#ffffff] leading-relaxed mb-8">
                 Larry is available for book signings, speaking engagements, media appearances, and ministry events. All proceeds from his books support ministry and service work.
               </p>
 
@@ -65,7 +65,7 @@ export default function Contact() {
                   <Mail size={16} className="text-gold" />
                 </div>
                 <div>
-                  <p className="font-medium text-warm-white/70 mb-0.5">Email</p>
+                  <p className="font-medium text-[#ffffff] mb-0.5">Email</p>
                   <a href="mailto:larbach98@gmail.com" className="text-gold hover:text-gold-light transition-colors text-sm">
                     larbach98@gmail.com
                   </a>
@@ -73,17 +73,17 @@ export default function Contact() {
               </div>
 
               <div className="p-6 bg-navy-card/40 border-l-4 border-gold mb-8 rounded-r-lg">
-                <p className="font-serif text-warm-white/60 italic leading-relaxed text-sm">
+                <p className="font-serif text-[#ffffff] italic leading-relaxed text-sm">
                   "My greatest hope is that my experiences resonate with readers, revealing the quiet yet powerful presence of God's charity woven into life's journey."
                 </p>
                 <p className="text-gold text-xs font-medium mt-3">— Larry Bachman</p>
               </div>
 
               <div>
-                <p className="text-xs font-medium text-warm-white/30 uppercase tracking-widest mb-3">Inquiries Welcome For</p>
+                <p className="text-xs font-medium text-[#ffffff] uppercase tracking-widest mb-3">Inquiries Welcome For</p>
                 <ul className="space-y-2">
                   {['Book Inquiry', 'Speaking / Appearance', 'Media & Press', 'Music & Licensing', 'General Message'].map((type) => (
-                    <li key={type} className="flex items-center gap-2 text-sm text-warm-white/60">
+                    <li key={type} className="flex items-center gap-2 text-sm text-[#ffffff]">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
                       {type}
                     </li>
@@ -98,7 +98,7 @@ export default function Contact() {
                 <div className="flex flex-col items-center justify-center text-center py-20 px-8 bg-navy-card/40 border border-gold/10 rounded-lg h-full">
                   <CheckCircle size={48} className="text-gold mb-4" />
                   <h3 className="font-serif text-2xl font-bold text-warm-white mb-3">Message Sent</h3>
-                  <p className="text-warm-white/60 leading-relaxed max-w-sm">
+                  <p className="text-[#ffffff] leading-relaxed max-w-sm">
                     Thank you for reaching out. Larry or his team will be in touch with you soon.
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-warm-white/70 mb-1.5" htmlFor="name">
+                      <label className="block text-sm font-medium text-[#ffffff] mb-1.5" htmlFor="name">
                         Full Name <span className="text-gold">*</span>
                       </label>
                       <input
@@ -127,7 +127,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-warm-white/70 mb-1.5" htmlFor="email">
+                      <label className="block text-sm font-medium text-[#ffffff] mb-1.5" htmlFor="email">
                         Email Address <span className="text-gold">*</span>
                       </label>
                       <input
@@ -144,7 +144,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-warm-white/70 mb-1.5" htmlFor="subject">
+                    <label className="block text-sm font-medium text-[#ffffff] mb-1.5" htmlFor="subject">
                       Subject <span className="text-gold">*</span>
                     </label>
                     <input
@@ -160,7 +160,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-warm-white/70 mb-1.5" htmlFor="message">
+                    <label className="block text-sm font-medium text-[#ffffff] mb-1.5" htmlFor="message">
                       Your Message <span className="text-gold">*</span>
                     </label>
                     <textarea

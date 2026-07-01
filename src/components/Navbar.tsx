@@ -52,7 +52,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <span className="text-gold font-serif font-semibold text-lg leading-tight block">Larry B. Bachman</span>
-              <span className="text-warm-white/40 text-xs tracking-[0.2em] uppercase">Author | Speaker</span>
+              <span className="text-[#ffffff] text-xs tracking-[0.2em] uppercase">Author | Speaker</span>
             </div>
           </Link>
 
@@ -64,7 +64,7 @@ export default function Navbar() {
                 className={`px-3 py-2 text-base font-semibold tracking-wide rounded-sm transition-all duration-300 ${
                   location.pathname === to
                     ? 'text-gold'
-                    : 'text-warm-white/60 hover:text-gold'
+                    : 'text-[#ffffff] hover:text-gold'
                 }`}
               >
                 {label}
@@ -118,7 +118,7 @@ export default function Navbar() {
                 className={`px-3 py-3 text-base font-semibold border-b border-gold/10 transition-colors ${
                   location.pathname === to
                     ? 'text-gold'
-                    : 'text-warm-white/60 hover:text-gold'
+                    : 'text-[#ffffff] hover:text-gold'
                 }`}
               >
                 {label}

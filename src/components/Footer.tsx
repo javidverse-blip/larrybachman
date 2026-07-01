@@ -31,10 +31,10 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-serif text-gold text-lg font-semibold">Larry B. Bachman</p>
-                <p className="text-xs text-warm-white/30 tracking-[0.2em] uppercase">Author | Speaker</p>
+                <p className="text-xs text-[#ffffff] tracking-[0.2em] uppercase">Author | Speaker</p>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-warm-white/40">
+            <p className="text-sm leading-relaxed text-[#ffffff]">
               Born in Pennsylvania. Shaped by faith, music, and the open land. Sharing stories that matter.
             </p>
             <div className="mt-5 flex items-center gap-3">
@@ -64,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {navLinks.map(({ to, label }) => (
                 <li key={to}>
-                  <Link to={to} className="text-sm text-warm-white/40 hover:text-gold transition-colors duration-300">
+                  <Link to={to} className="text-sm text-[#ffffff] hover:text-gold transition-colors duration-300">
                     {label}
                   </Link>
                 </li>
@@ -75,15 +75,15 @@ export default function Footer() {
           <div>
             <h4 className="text-gold font-semibold text-sm uppercase tracking-[0.2em] mb-5">A Life Well Lived</h4>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-sm text-warm-white/40">
+              <li className="flex items-center gap-3 text-sm text-[#ffffff]">
                 <BookOpen size={15} className="text-gold/60 shrink-0" />
                 Author of faith-based books and stories
               </li>
-              <li className="flex items-center gap-3 text-sm text-warm-white/40">
+              <li className="flex items-center gap-3 text-sm text-[#ffffff]">
                 <Heart size={15} className="text-gold/60 shrink-0" />
                 All proceeds support ministry and service
               </li>
-              <li className="flex items-center gap-3 text-sm text-warm-white/40">
+              <li className="flex items-center gap-3 text-sm text-[#ffffff]">
                 <Mail size={15} className="text-gold/60 shrink-0" />
                 <a href="mailto:larbach98@gmail.com" className="hover:text-gold transition-colors">larbach98@gmail.com</a>
               </li>
@@ -92,10 +92,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gold/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-warm-white/25">&copy; {new Date().getFullYear()} Larry Bachman. All rights reserved.</p>
+          <p className="text-xs text-[#ffffff]">&copy; {new Date().getFullYear()} Larry Bachman. All rights reserved.</p>
           <div className="text-center sm:text-right">
-            <p className="text-xs text-warm-white/25">Designed by JavidVerse – For All Creative Solutions</p>
-            <p className="text-xs text-warm-white/25">
+            <p className="text-xs text-[#ffffff]">Designed by JavidVerse – For All Creative Solutions</p>
+            <p className="text-xs text-[#ffffff]">
               Email us at:{' '}
               <a href="mailto:javidverse@gmail.com" className="transition-colors hover:text-gold">javidverse@gmail.com</a>
             </p>

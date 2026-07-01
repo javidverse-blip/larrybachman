@@ -26,7 +26,7 @@ export default function Media() {
             <article className="grid grid-cols-1 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20 lg:grid-cols-[1.05fr_0.95fr]">
               <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
                 <h3 className="mb-4 font-serif text-3xl font-bold text-warm-white">Nationally Syndicated Television Appearance</h3>
-                <p className="leading-relaxed text-warm-white/65">Larry Bachman steps into the spotlight with a legacy message that inspires audiences through faith, storytelling, and a lifetime of experience.</p>
+                <p className="leading-relaxed text-[#ffffff]">Larry Bachman steps into the spotlight with a legacy message that inspires audiences through faith, storytelling, and a lifetime of experience.</p>
               </div>
               <div className="min-h-[240px] bg-navy-card/70 p-4 sm:p-6">
                 <div className="relative aspect-video h-full min-h-[220px] w-full overflow-hidden rounded-xl border border-gold/20">
@@ -55,7 +55,7 @@ export default function Media() {
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="mb-6 font-serif text-4xl font-bold text-warm-white">Hollywood’s Grauman’s Theatre</h2>
-              <p className="leading-relaxed text-warm-white/70">My beautiful daughter, Sheinny, and I attended the premiere of The Sparrows Nesting at Hollywood’s Grauman’s Theatre. The film featured my song The Promise, performed by Shana Saint and promoted worldwide as part of the movie’s soundtrack.</p>
+              <p className="leading-relaxed text-[#ffffff]">My beautiful daughter, Sheinny, and I attended the premiere of The Sparrows Nesting at Hollywood’s Grauman’s Theatre. The film featured my song The Promise, performed by Shana Saint and promoted worldwide as part of the movie’s soundtrack.</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export default function Media() {
             </div>
             <div>
               <h2 className="mb-6 font-serif text-4xl font-bold text-warm-white">Discover Larry Bachman’s Inspirational Journey in the Snyder County Times</h2>
-              <p className="leading-relaxed text-warm-white/70">We are thrilled to feature a captivating profile of local author and storyteller, Larry Bachman, in the latest edition of the Snyder County Times! In this special feature, learn about Larry’s impactful books that blend narrative with valuable life lessons. Explore his latest release, “Where Are You Going: It’s About Choice,” and discover how Larry’s experiences growing up in Pennsylvania shaped his perspective on faith and decision-making.</p>
+              <p className="leading-relaxed text-[#ffffff]">We are thrilled to feature a captivating profile of local author and storyteller, Larry Bachman, in the latest edition of the Snyder County Times! In this special feature, learn about Larry’s impactful books that blend narrative with valuable life lessons. Explore his latest release, “Where Are You Going: It’s About Choice,” and discover how Larry’s experiences growing up in Pennsylvania shaped his perspective on faith and decision-making.</p>
             </div>
           </div>
         </div>

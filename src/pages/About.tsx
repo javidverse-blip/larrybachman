@@ -43,7 +43,7 @@ export default function About() {
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Meet Larry</p>
             <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Author | Speaker</h2>
-            <div className="space-y-4 leading-relaxed text-warm-white/70">
+            <div className="space-y-4 leading-relaxed text-[#ffffff]">
               <p>Some people write stories.</p>
               <p className="font-serif text-xl font-semibold text-gold-light">Larry B. Bachman has lived them.</p>
               <p>From a quiet Pennsylvania farm to concert stages, from publishing to filmmaking, from seasons of success to moments of heartbreak, every chapter has revealed one unchanging truth:</p>
@@ -82,11 +82,13 @@ export default function About() {
 
       <section className="bg-navy px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-          <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-lg border border-gold/20 bg-[#251908] p-6 shadow-xl shadow-black/20" />
+          <div className="group mx-auto flex h-[320px] w-full max-w-md items-center justify-center rounded-lg bg-[#1b1207] p-5">
+            <img src="/guitar-about.webp" alt="Guitar representing Larry Bachman’s musical journey" width="600" height="399" loading="lazy" decoding="async" className="h-full w-full object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.35)] transition-transform duration-500 group-hover:scale-[1.02]" />
+          </div>
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Why Larry Writes</p>
             <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Stories That Point Beyond Themselves</h2>
-            <div className="space-y-4 leading-relaxed text-warm-white/70">
+            <div className="space-y-4 leading-relaxed text-[#ffffff]">
               <p>Larry doesn&apos;t write simply to entertain.</p>
               <p className="font-serif text-xl font-semibold text-gold-light">He writes to encourage.</p>
               <p>Whether through children&apos;s books, novels, devotionals, songs, or films, every project is created with one purpose:</p>
@@ -112,7 +114,7 @@ export default function About() {
                   <Icon size={18} className="text-gold" />
                 </div>
                 <h3 className="mb-2 font-serif text-xl font-bold text-warm-white">{title}</h3>
-                <p className="text-sm leading-relaxed text-warm-white/65">{desc}</p>
+                <p className="text-sm leading-relaxed text-[#ffffff]">{desc}</p>
               </article>
             ))}
           </div>
@@ -124,7 +126,7 @@ export default function About() {
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">The Story Continues</p>
           <h2 className="mb-5 font-serif text-3xl font-bold text-warm-white sm:text-4xl">Continue the Journey</h2>
-          <p className="mx-auto mb-8 max-w-2xl leading-relaxed text-warm-white/70">Discover stories that encourage faith, strengthen hope, and remind every reader that God is never finished writing their story.</p>
+          <p className="mx-auto mb-8 max-w-2xl leading-relaxed text-[#ffffff]">Discover stories that encourage faith, strengthen hope, and remind every reader that God is never finished writing their story.</p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link to="/books" className="btn-primary">Browse the Books <ArrowRight size={18} /></Link>
             <Link to="/contact" className="btn-outline">Contact Larry</Link>

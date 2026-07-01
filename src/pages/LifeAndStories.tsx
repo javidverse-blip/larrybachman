@@ -153,7 +153,7 @@ export default function LifeAndStories() {
                 className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                   activeTab === id
                     ? 'border-gold text-gold'
-                    : 'border-transparent text-warm-white/50 hover:text-gold hover:border-gold/30'
+                    : 'border-transparent text-[#ffffff] hover:text-gold hover:border-gold/30'
                 }`}
               >
                 {label}
@@ -179,10 +179,10 @@ export default function LifeAndStories() {
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-sm">{a.category}</span>
-                    <span className="text-xs text-warm-white/40">{a.date}</span>
+                    <span className="text-xs text-[#ffffff]">{a.date}</span>
                   </div>
                   <h3 className="font-serif font-bold text-warm-white text-xl mb-3 leading-snug">{a.title}</h3>
-                  <p className="text-warm-white/60 text-sm leading-relaxed flex-1">{a.excerpt}</p>
+                  <p className="text-[#ffffff] text-sm leading-relaxed flex-1">{a.excerpt}</p>
                   <div className="mt-5 pt-4 border-t border-gold/10">
                     <span className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-sm font-medium cursor-pointer group/link">
                       Read More <ArrowRight size={13} className="transition-transform group-hover/link:translate-x-1" />
@@ -204,10 +204,10 @@ export default function LifeAndStories() {
                   <div className="p-5 flex flex-col flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs font-medium text-gold bg-gold/10 border border-gold/20 px-2 py-0.5 rounded-sm">{a.category}</span>
-                      <span className="text-xs text-warm-white/40">{a.date}</span>
+                      <span className="text-xs text-[#ffffff]">{a.date}</span>
                     </div>
                     <h3 className="font-serif font-bold text-warm-white text-base mb-2 leading-snug">{a.title}</h3>
-                    <p className="text-warm-white/60 text-sm leading-relaxed flex-1 line-clamp-3">{a.excerpt}</p>
+                    <p className="text-[#ffffff] text-sm leading-relaxed flex-1 line-clamp-3">{a.excerpt}</p>
                     <div className="mt-4 pt-3 border-t border-gold/10">
                       <span className="inline-flex items-center gap-1 text-gold hover:text-gold-light text-sm font-medium cursor-pointer group/link">
                         Read More <ArrowRight size={12} className="transition-transform group-hover/link:translate-x-1" />
@@ -229,10 +229,10 @@ export default function LifeAndStories() {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <p className="text-gold font-medium tracking-widest uppercase text-xs mb-3">Life on the Land</p>
               <h2 className="text-3xl font-serif font-bold text-warm-white mb-6">The Texas Ranch</h2>
-              <p className="text-warm-white/60 leading-relaxed mb-4">
+              <p className="text-[#ffffff] leading-relaxed mb-4">
                 After decades of music tours, city stages, and the bustle of the publishing world, Larry Bachman found his deepest peace on a ranch in Texas. It's where he writes, reflects, and reconnects with the values that have always guided him.
               </p>
-              <p className="text-warm-white/60 leading-relaxed">
+              <p className="text-[#ffffff] leading-relaxed">
                 The land demands honesty. Animals require presence. Every sunrise is a reminder that life is both fragile and generous, and that gratitude is the most honest response to all of it.
               </p>
             </div>
@@ -267,7 +267,7 @@ export default function LifeAndStories() {
                   <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                     <p className="text-gold text-xs font-medium uppercase tracking-wide mb-2">{story.date}</p>
                     <h3 className="font-serif font-bold text-warm-white text-2xl mb-4">{story.title}</h3>
-                    <p className="text-warm-white/60 leading-relaxed italic text-lg">"{story.excerpt}"</p>
+                    <p className="text-[#ffffff] leading-relaxed italic text-lg">"{story.excerpt}"</p>
                   </div>
                 </div>
               ))}
@@ -341,7 +341,7 @@ export default function LifeAndStories() {
             <div className="text-center mt-4">
               <span className="text-gold text-xs uppercase tracking-widest font-medium block mb-1">{galleryImages[lightbox].category}</span>
               <p className="text-warm-white font-serif text-lg">{galleryImages[lightbox].caption}</p>
-              <p className="text-warm-white/40 text-xs mt-2">{lightbox + 1} / {galleryImages.length}</p>
+              <p className="text-[#ffffff] text-xs mt-2">{lightbox + 1} / {galleryImages.length}</p>
             </div>
           </div>
         </div>

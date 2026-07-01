@@ -63,7 +63,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Meet Larry</p>
             <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Author | Speaker</h2>
-            <div className="space-y-4 leading-relaxed text-warm-white/70">
+            <div className="space-y-4 leading-relaxed text-[#ffffff]">
               <p>Some people write stories.</p>
               <p className="font-serif text-xl font-semibold text-gold-light">Larry B. Bachman has lived them.</p>
               <p>From a quiet Pennsylvania farm to concert stages, from publishing to filmmaking, from seasons of success to moments of heartbreak, every chapter has revealed one unchanging truth:</p>
@@ -92,7 +92,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-1 flex-col pt-5">
                   <h3 className="mb-3 font-serif text-2xl font-bold leading-snug text-warm-white">{book.title}</h3>
-                  <p className="mb-6 flex-1 text-base leading-relaxed text-warm-white/70">{book.description}</p>
+                  <p className="mb-6 flex-1 text-base leading-relaxed text-[#ffffff]">{book.description}</p>
                   <a href={book.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 self-start rounded-sm bg-gold px-5 py-3 text-base font-semibold text-navy transition-colors hover:bg-gold-light">
                     Get a Copy <ExternalLink size={16} />
                   </a>
@@ -117,7 +117,7 @@ export default function Home() {
             <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
               <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-gold/10"><Music2 size={20} className="text-gold" /></div>
               <h3 className="mb-4 font-serif text-3xl font-bold text-warm-white">The Promise</h3>
-              <p className="mb-7 leading-relaxed text-warm-white/65">“The Promise” is one of Larry B. Bachman’s signature songs. Written from a deeply personal journey of friendship, loss, and unwavering faith, it stands as a testimony to God’s promises and His faithfulness through every season of life.</p>
+              <p className="mb-7 leading-relaxed text-[#ffffff]">“The Promise” is one of Larry B. Bachman’s signature songs. Written from a deeply personal journey of friendship, loss, and unwavering faith, it stands as a testimony to God’s promises and His faithfulness through every season of life.</p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link to="/music" className="btn-primary">Explore the Music <ArrowRight size={18} /></Link>
                 <a href="https://www.youtube.com/@Larrybbachman" target="_blank" rel="noopener noreferrer" className="btn-outline"><Youtube size={18} /> YouTube</a>
@@ -145,7 +145,7 @@ export default function Home() {
           <article className="grid grid-cols-1 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
               <h3 className="mb-4 font-serif text-3xl font-bold text-warm-white">Nationally Syndicated Television Appearance</h3>
-              <p className="mb-7 leading-relaxed text-warm-white/65">Explore television appearances, Hollywood moments, interviews, and media recognition from Larry B. Bachman’s journey.</p>
+              <p className="mb-7 leading-relaxed text-[#ffffff]">Explore television appearances, Hollywood moments, interviews, and media recognition from Larry B. Bachman’s journey.</p>
               <Link to="/media" className="btn-primary self-start">Explore Media <ArrowRight size={18} /></Link>
             </div>
             <div className="min-h-[240px] bg-navy-card/70 p-4 sm:p-6">

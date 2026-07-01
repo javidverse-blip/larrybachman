@@ -143,7 +143,7 @@ function BookCard({ book, featured = false }: { book: Book; featured?: boolean }
         <div className={`flex flex-col ${featured ? '' : 'pt-5'}`}>
           {featured && <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Featured Book</p>}
           <h3 className="mb-3 font-serif text-2xl font-bold leading-snug text-warm-white">{book.title}</h3>
-          <p className="mb-6 flex-1 text-base leading-relaxed text-warm-white/70">{book.description}</p>
+          <p className="mb-6 flex-1 text-base leading-relaxed text-[#ffffff]">{book.description}</p>
           <div className="self-start"><AmazonButton book={book} /></div>
         </div>
       </div>

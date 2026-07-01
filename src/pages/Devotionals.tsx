@@ -117,7 +117,7 @@ export default function Devotionals() {
                       </div>
                       <h3 className="font-serif font-bold text-warm-white text-lg mb-2 leading-snug">{dev.title}</h3>
                       {dev.description && (
-                        <p className="text-warm-white/60 text-sm leading-relaxed mb-4">{dev.description}</p>
+                        <p className="text-[#ffffff] text-sm leading-relaxed mb-4">{dev.description}</p>
                       )}
                       {embedUrl && (
                         <a

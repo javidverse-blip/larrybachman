@@ -27,14 +27,14 @@ export default function Blog() {
                   <Newspaper size={20} />
                   <span className="text-xs font-semibold uppercase tracking-[0.22em]">Publisher Spotlight</span>
                 </div>
-                <span className="hidden text-xs uppercase tracking-[0.18em] text-warm-white/40 sm:block">Citi of Books</span>
+                <span className="hidden text-xs uppercase tracking-[0.18em] text-[#ffffff] sm:block">Citi of Books</span>
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr]">
               <div className="p-7 sm:p-10 lg:p-14">
                 <h2 className="mb-6 font-serif text-4xl font-bold leading-tight text-warm-white sm:text-5xl">Featured by Citi of Books</h2>
-                <p className="max-w-3xl text-lg leading-relaxed text-warm-white/70">
+                <p className="max-w-3xl text-lg leading-relaxed text-[#ffffff]">
                   Larry B. Bachman&apos;s work has been recognized by Citi of Books, where readers can discover featured releases, author highlights, and additional information about his publications. Explore the latest feature and browse available titles.
                 </p>
 
