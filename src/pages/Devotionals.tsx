@@ -54,7 +54,7 @@ export default function Devotionals() {
       </section>
 
       {/* Devotionals Grid */}
-      <section className="section-padding bg-gold">
+      <section className="section-padding bg-[#b8b6b1]">
         <div className="container-wide">
           {loading ? (
             <div className="flex items-center justify-center py-20">

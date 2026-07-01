@@ -180,7 +180,7 @@ Every story has a beginning. Every life has another chapter. Whether through fic
         </div>
       </BookSection>
 
-      <BookSection eyebrow="Watch & Read" title="Where Are You Series" className="border-y border-navy/15 bg-gold" light>
+      <BookSection eyebrow="Watch & Read" title="Where Are You Series" className="border-y border-navy/15 bg-[#b8b6b1]" light>
         <div className="grid grid-cols-1 gap-7 lg:grid-cols-3">
           {videoBooks.map((book) => <BookCard key={book.title} book={book} />)}
         </div>
@@ -192,7 +192,7 @@ Every story has a beginning. Every life has another chapter. Whether through fic
         </div>
       </BookSection>
 
-      <section className="border-y border-navy/15 bg-gold px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="border-y border-navy/15 bg-[#b8b6b1] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-xl border border-gold/25 bg-navy-card/50 shadow-xl shadow-black/25">
             <img src="/larry-office.webp" alt="Larry B. Bachman" width="1080" height="1080" loading="lazy" decoding="async" className="h-full w-full object-cover" />

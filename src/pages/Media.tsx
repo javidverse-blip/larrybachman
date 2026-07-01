@@ -16,7 +16,7 @@ export default function Media() {
         </div>
       </section>
 
-      <section className="section-padding bg-gold">
+      <section className="section-padding bg-[#b8b6b1]">
         <div className="container-wide">
           <div className="mb-12">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Watch</p>
@@ -62,7 +62,7 @@ export default function Media() {
         </div>
       </section>
 
-      <section className="section-padding bg-gold">
+      <section className="section-padding bg-[#b8b6b1]">
         <div className="container-wide">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <div>

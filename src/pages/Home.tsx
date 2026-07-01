@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Featured Books */}
-      <section className="section-padding border-y border-navy/15 bg-gold">
+      <section className="section-padding border-y border-navy/15 bg-[#b8b6b1]">
         <div className="container-wide">
           <div className="mb-10 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Selected Works</p>
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* Media Preview */}
-      <section className="section-padding bg-gold">
+      <section className="section-padding bg-[#b8b6b1]">
         <div className="container-wide">
           <article className="grid grid-cols-1 overflow-hidden rounded-2xl border border-gold/20 bg-navy-card/55 shadow-xl shadow-black/20 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">

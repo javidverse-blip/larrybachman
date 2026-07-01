@@ -18,7 +18,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="section-padding bg-gold">
+      <section className="section-padding bg-[#b8b6b1]">
         <div className="container-wide">
           <article className="overflow-hidden rounded-2xl border border-[#9f712c]/40 bg-[#251908] shadow-2xl shadow-[#251908]/20">
             <div className="border-b border-gold/20 px-6 py-5 sm:px-10">

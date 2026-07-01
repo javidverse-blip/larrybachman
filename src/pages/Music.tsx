@@ -32,7 +32,7 @@ export default function Music() {
         </div>
       </section>
 
-      <section className="section-padding border-b border-navy/15 bg-gold">
+      <section className="section-padding border-b border-navy/15 bg-[#b8b6b1]">
         <div className="container-wide">
           <div className="mb-12 max-w-2xl">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Listen</p>
@@ -133,7 +133,7 @@ export default function Music() {
               <p className="mb-5 leading-relaxed text-warm-white/70">Years later, while helping his son produce an album, Larry experienced another moment he believes was directed by God. As he reflected on the unfinished song If You Need a Friend, he sensed a clear impression on his heart: rewrite it. Turn it into a praise song.</p>
               <p className="leading-relaxed text-warm-white/70">Within minutes, the message born out of grief became a testimony of faith. If You Need a Friend became The Promise—a song for anyone searching for hope, peace, and the assurance that God’s promises never fail.</p>
               <a
-                href="https://youtu.be/JLAtiC_S5Zc?si=XsdexwC9phdp_59I"
+                href="https://www.youtube.com/watch?v=q-g_sZ9svW4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center justify-center gap-2 self-start rounded-sm bg-gold px-6 py-3 font-semibold text-navy transition-colors hover:bg-gold-light"

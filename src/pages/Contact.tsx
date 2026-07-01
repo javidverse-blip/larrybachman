@@ -49,11 +49,11 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section-padding bg-gold">
+      <section className="section-padding bg-[#b8b6b1]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
             {/* Contact Info */}
-            <div className="lg:col-span-2 bg-navy-card border border-navy/20 rounded-lg p-6 sm:p-8">
+            <div className="lg:col-span-2 bg-[#251908] border border-navy/20 rounded-lg p-6 sm:p-8">
               <p className="text-gold font-medium tracking-[0.2em] uppercase text-xs mb-3">Get in Touch</p>
               <h2 className="text-3xl font-serif font-bold text-warm-white mb-6">Let's Connect</h2>
               <p className="text-warm-white/60 leading-relaxed mb-8">
@@ -93,7 +93,7 @@ export default function Contact() {
             </div>
 
             {/* Form */}
-            <div className="lg:col-span-3 bg-navy-card border border-navy/20 rounded-lg p-6 sm:p-8">
+            <div className="lg:col-span-3 bg-[#251908] border border-navy/20 rounded-lg p-6 sm:p-8">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center text-center py-20 px-8 bg-navy-card/40 border border-gold/10 rounded-lg h-full">
                   <CheckCircle size={48} className="text-gold mb-4" />

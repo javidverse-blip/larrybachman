@@ -56,7 +56,7 @@ export default function About() {
         </div>
       </section>
 
-      <section id="journey" className="scroll-mt-20 bg-gold px-4 py-16 text-navy sm:px-6 sm:py-20 lg:px-8">
+      <section id="journey" className="scroll-mt-20 bg-[#b8b6b1] px-4 py-16 text-navy sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide">
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">A Life of Many Callings</p>
@@ -82,9 +82,7 @@ export default function About() {
 
       <section className="bg-navy px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-          <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-lg border border-gold/20 bg-navy-card/75 p-6 shadow-xl shadow-black/20">
-            <img src="/guitar-about.webp" alt="Guitar representing Larry Bachman’s musical journey" width="600" height="399" loading="lazy" decoding="async" className="h-full w-full object-contain" />
-          </div>
+          <div className="mx-auto aspect-square w-full max-w-md overflow-hidden rounded-lg border border-gold/20 bg-[#251908] p-6 shadow-xl shadow-black/20" />
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">Why Larry Writes</p>
             <h2 className="mb-6 font-serif text-3xl font-bold leading-tight text-warm-white sm:text-4xl">Stories That Point Beyond Themselves</h2>
@@ -101,7 +99,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-gold px-4 py-16 text-navy sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[#b8b6b1] px-4 py-16 text-navy sm:px-6 sm:py-20 lg:px-8">
         <div className="container-wide">
           <div className="mb-10 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-navy/65">Ministry Values</p>

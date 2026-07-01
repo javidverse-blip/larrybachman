@@ -165,7 +165,7 @@ export default function LifeAndStories() {
 
       {/* ── ARTICLES TAB ── */}
       {activeTab === 'articles' && (
-        <div className="bg-gold">
+        <div className="bg-[#b8b6b1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           {/* Featured */}
           <p className="text-navy/70 font-medium tracking-widest uppercase text-xs mb-2">Featured</p>
@@ -238,7 +238,7 @@ export default function LifeAndStories() {
             </div>
           </div>
 
-          <div className="bg-gold py-14 sm:py-16">
+          <div className="bg-[#b8b6b1] py-14 sm:py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {ranchValues.map(({ icon: Icon, title, desc }) => (
@@ -292,7 +292,7 @@ export default function LifeAndStories() {
 
       {/* ── GALLERY TAB ── */}
       {activeTab === 'gallery' && (
-        <div className="bg-gold">
+        <div className="bg-[#b8b6b1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
             {galleryImages.map((img, idx) => (
